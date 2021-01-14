@@ -17,13 +17,13 @@ define("language","en_US");
 define("url",__DIR__);
 define("baseurl",__DIR__);
 define("apps_dir","./_apps/");
+define("template_file_extension","php");
 define("templates_dir","./templates/");
 define("templates_default","404");
 define("templates_default_route","/error/404/");
 define("vendor_dir","./vendor/");
-define("assets_dir","./templates/assets/");
+define("assets_dir","./templates/assets");
 define("layouts_dir","./templates/layouts/");
-define("template_file_extension","php");
 define("store_dir","./_store/");
 define("public_dir","./_public/");
 define("dart_dir","./_dart/");
@@ -38,13 +38,15 @@ define("session_timout",20);
 define("session_delete_timout",30);
 define("auth_session_key","logged_in");
 define("auth_url","/auth/login");
-define("num_results_on_page",5);
-define("domain", "https://golojan.com/");
+
+define("domain", "http://localhost/anthill");
 
 define("db_host","localhost");
 define("db_user","root");
 define("db_password","");
-define("db","YOUR_DB");
-
+define("db_name","ngodb");
+define("db_port",null);
+define("db_charset","utf8");
+define("db_socket",null);
 
 

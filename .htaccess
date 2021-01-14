@@ -14,7 +14,7 @@
 	</IfModule>
 
 	RewriteEngine On
-	RewriteBase /
+	RewriteBase /anthill
 
 	# Handle Authorization Header
 	RewriteCond %{HTTP:Authorization} .

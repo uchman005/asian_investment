@@ -5,15 +5,12 @@ define('DOT', '.');
 require_once DOT . "/bootstrap.php";
 
 //Home page//
-$Route->add('/', function () {
+$Route->add('/anthill/', function () {
     
-    $Core = new Apps\Core;
-    $Template = new Apps\Template;
-    $Template->addheader("layouts.header");
-    $Template->addfooter("layouts.footer");
-    $Template->assign("title", "PHP Anthill | Home");
-    $Template->render("home");
+    $Template = new Apps\Template; 
+    $Device = new Apps\Device;
     
+
 }, 'GET');
 //Home page//
 

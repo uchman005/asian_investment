@@ -1,8 +1,8 @@
 {
-    "name": "golojan/golojan",
-    "description": "GOLOJAN TECHNOLOGIES LTD",
+    "name": "golojan/anthill",
+    "description": "Anthill Framework",
     "type": "project",
-    "version": "20.9.30",
+    "version": "21.01.14",
     "keywords": [
         "psr4",
         "template"

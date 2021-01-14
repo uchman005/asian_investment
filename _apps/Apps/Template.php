@@ -7,6 +7,7 @@ https://www.daggerhart.com/simple-php-template-class/
 namespace Apps;
 
 use \Apps\Session;
+use \Apps\MysqliDb;
 use stdClass;
 
 class Template extends Session
@@ -29,10 +30,7 @@ class Template extends Session
 	public $public_dir = public_dir;
 	public $assets = assets_dir;
 	public $plugins = plugins_dir;
-
-	public $dart_dir = dart_dir;
-	public $dart = dart_dir;
-
+	
 	public $vendor = vendor_dir;
 	public $layouts = layouts_dir;
 	public $store = store_dir;
@@ -59,6 +57,8 @@ class Template extends Session
 
 	public $footer_jss_scripts = '';
 	public $footer_css_scripts = '';
+
+
 
 	public $tempArr = array();
 	public $template_extension = template_file_extension;
@@ -114,7 +114,43 @@ class Template extends Session
 		$this->Core = new Core;
 	}
 
+	
+    /**
+     * @param mixed $posted_array 
+     * @return \stdClass 
+     */
+    public function post($posted_array)
+    {
+        $this->form_posted_array = $posted_array;
+		$forms = new stdClass;
+		$mysqlidb = new MysqliDB(db_host,db_user,db_password,db_name);
+        if (is_array($posted_array)) {
+            foreach ($posted_array as $key => $val) {
+                if (is_array($val)) {
+                    $this->returned_posted_array[$key] = $val;
+                    $forms->$key = $val;
+                } else {
+                    $this->returned_posted_array[$key] = $mysqlidb->mysql_prepare_value($val);
+                    $forms->$key = $mysqlidb->mysql_prepare_value($val);
+                }
+            }
+            return $forms;
+        } else {
+            exit('Error: Form not good');
+        }
+	}
+	
+	public function debug($data = "Debug::Stoped")
+	{
+		if (is_array($data)) {
+			print_r($data);
+		} else {
+			print_r($data);
+		}
+		exit();
+	}
 
+	
 	public function authorize($accid = null)
 	{
 		if (!$this->data[auth_session_key]) {
