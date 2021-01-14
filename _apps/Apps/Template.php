@@ -13,6 +13,8 @@ use stdClass;
 class Template extends Session
 {
 
+	public $version = version;
+
 	public $variables = array();
 	public $errors = array();
 
@@ -20,6 +22,7 @@ class Template extends Session
 	public $ME = NULL;
 	public $Self = NULL;
 	public $template = NULL;
+	public $domain = domain;
 
 	public $folder = "";
 	public $root = templates_dir;
@@ -80,6 +83,8 @@ class Template extends Session
 
 		parent::__construct($auth_url);
 
+		$this->config = $this->GetSettings();
+
 		if (isset($this->data[auth_session_key])) {
 			//user is logged in//
 			if (isset($this->data['auth_time'])) {
@@ -138,6 +143,24 @@ class Template extends Session
         } else {
             exit('Error: Form not good');
         }
+	}
+
+
+	public function config($Constantkey=null)
+	{
+		$config_proc = get_defined_constants(true);
+		$config_proc = $config_proc['user'];
+		$object = json_decode(json_encode((object) $config_proc), FALSE);
+		return $object->$Constantkey;
+		
+	}
+	public function GetSettings()
+	{
+		$config_proc = get_defined_constants(true);
+		$config_proc = $config_proc['user'];
+		$object = json_decode(json_encode((object) $config_proc), FALSE);
+		return $object;
+		
 	}
 	
 	public function debug($data = "Debug::Stoped")
@@ -679,11 +702,12 @@ class Template extends Session
 			${$key} = $value;
 		}
 
-		$config = $this->config;
-
-		$Me = $this;
 		$ME = $this;
+		$Me = $this;
+		$me = $this;
+		$SELF = $this;
 		$Self = $this;
+		$self = $this;
 		$Template = $this;
 
 		$error = $this->error;
@@ -701,6 +725,7 @@ class Template extends Session
 		$robots = $this->robots;
 		$footer_files = "";
 		$Core = $this->Core;
+
 		//Load Config variables//
 		$config = $this->config;
 		//Load Config variables//

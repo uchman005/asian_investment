@@ -7,9 +7,12 @@ require_once DOT . "/bootstrap.php";
 //Home page//
 $Route->add('/anthill/', function () {
     
-    $Template = new Apps\Template; 
-    $Device = new Apps\Device;
-    
+    $Template = new Apps\Template;
+    $Template->addheader("layouts.header");
+    $Template->addfooter("layouts.footer");
+    $Template->assign("title","Anthill");
+
+    $Template->render("home");
 
 }, 'GET');
 //Home page//

@@ -44,7 +44,7 @@ define("domain", "http://localhost/anthill");
 define("db_host","localhost");
 define("db_user","root");
 define("db_password","");
-define("db_name","ngodb");
+define("db_name","");
 define("db_port",null);
 define("db_charset","utf8");
 define("db_socket",null);
