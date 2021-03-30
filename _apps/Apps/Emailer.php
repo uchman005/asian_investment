@@ -8,11 +8,11 @@ class Emailer
 	public $toEmail = NULL;
 	public $toName = NULL;
 
-	public $fromEmail = "ENSSAA@golojan.com";
-	public $fromName = "ENSSAA@Enugu";
-	public $replyEmail = "ENSSAA@golojan.com";
-	public $replyName = "ENSSAA@Enugu";
-	public $subject = "ENSSAA@Enugu";
+	public $fromEmail = "info@localhost.com";
+	public $fromName = "Localhost";
+	public $replyEmail = "info@localhost.com";
+	public $replyName = "Localhost";
+	public $subject = "New Mail";
 
 	private $variables = array();
 
@@ -53,25 +53,24 @@ class Emailer
 			$PHPmailer->AddReplyTo($this->replyEmail, $this->replyName);
 			$PHPmailer->Subject = $this->subject;
 
-			/*
-			$PHPmailer->Sender = "notix@ebsgfinance.net";
-			$PHPmailer->DKIM_domain = 'ebsgfinance.net';
-			$PHPmailer->DKIM_private = "https://ebsgfinance.net/_dkim/private.key";
-			$PHPmailer->DKIM_selector = 'default._domainkey';
-			$PHPmailer->DKIM_passphrase = '';
-			$PHPmailer->DKIM_identity = $PHPmailer->From;
-			$PHPmailer->addCustomHeader("BIMI-Selector:v=BIMI1;s=default;");
-			*/
+			if (enable_DKIM_keys) {
+				//$PHPmailer->Sender = $this->fromEmail;
+				//$PHPmailer->DKIM_domain = domain;
+				//$PHPmailer->DKIM_private = "https://golojan.com/_dkim/private.key";
+				//$PHPmailer->DKIM_selector = 'default._domainkey';
+				//$PHPmailer->DKIM_passphrase = '';
+				//$PHPmailer->DKIM_identity = $this->fromEmail;
+				//$PHPmailer->addCustomHeader("BIMI-Selector:v=BIMI1;s=default;");
+			}
 
 			$PHPmailer->isHTML(true);
 			$PHPmailer->MsgHTML($html);
 			$PHPmailer->Encoding = "base64";
 
-			$sent = $PHPmailer->Send();
-			return $sent;
+			return $PHPmailer->Send();
 		} catch (\Exception $e) {
 			$PHPmailer->ClearAllRecipients();
-			return $sent;
+			return 0;
 		}
 	}
 }

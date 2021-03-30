@@ -71,7 +71,7 @@ class Session {
     }
     
     if ($this->login_required) {
-      if (!$this->data[$this->auth_session_key]) {
+      if ( !isset($this->data[$this->auth_session_key]) ) {
         header("Location: " . $this->login_page);
       }
     }

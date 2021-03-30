@@ -8,14 +8,15 @@ require_once DOT . "/bootstrap.php";
 $Route->add('/anthill/', function () {
     
     $Template = new Apps\Template;
-    $Template->addheader("layouts.header");
-    $Template->addfooter("layouts.footer");
-    $Template->assign("title","Anthill");
+    $Template->addheader("docs.layouts.header");
+    $Template->addfooter("docs.layouts.footer");
+    $Template->assign("title","Anthill Home");
 
-    $Template->render("home");
+    $Template->render("docs.index");
 
 }, 'GET');
 //Home page//
+
 
 
 
@@ -32,5 +33,7 @@ $Route->add(
     'GET'
 );
 //Logout Sessions//
+
+
 
 $Route->run('/');

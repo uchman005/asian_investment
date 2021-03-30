@@ -14,6 +14,7 @@ class Template extends Session
 {
 
 	public $version = version;
+	public $referrer = NULL;
 
 	public $variables = array();
 	public $errors = array();
@@ -33,7 +34,7 @@ class Template extends Session
 	public $public_dir = public_dir;
 	public $assets = assets_dir;
 	public $plugins = plugins_dir;
-	
+
 	public $vendor = vendor_dir;
 	public $layouts = layouts_dir;
 	public $store = store_dir;
@@ -61,8 +62,6 @@ class Template extends Session
 	public $footer_jss_scripts = '';
 	public $footer_css_scripts = '';
 
-
-
 	public $tempArr = array();
 	public $template_extension = template_file_extension;
 
@@ -74,6 +73,7 @@ class Template extends Session
 
 	public $session_timout = session_timout;
 	public $auth = false;
+	public $referred = false;
 	public $auth_url = auth_url;
 
 	public $config = "";
@@ -105,7 +105,6 @@ class Template extends Session
 			//user is logged in//
 		}
 
-
 		$this->set_folder($this->templates_dir);
 		$config = get_defined_constants(true);
 
@@ -119,40 +118,39 @@ class Template extends Session
 		$this->Core = new Core;
 	}
 
-	
-    /**
-     * @param mixed $posted_array 
-     * @return \stdClass 
-     */
-    public function post($posted_array)
-    {
-        $this->form_posted_array = $posted_array;
+
+	/**
+	 * @param mixed $posted_array 
+	 * @return \stdClass 
+	 */
+	public function post($posted_array)
+	{
+		$this->form_posted_array = $posted_array;
 		$forms = new stdClass;
-		$mysqlidb = new MysqliDB(db_host,db_user,db_password,db_name);
-        if (is_array($posted_array)) {
-            foreach ($posted_array as $key => $val) {
-                if (is_array($val)) {
-                    $this->returned_posted_array[$key] = $val;
-                    $forms->$key = $val;
-                } else {
-                    $this->returned_posted_array[$key] = $mysqlidb->mysql_prepare_value($val);
-                    $forms->$key = $mysqlidb->mysql_prepare_value($val);
-                }
-            }
-            return $forms;
-        } else {
-            exit('Error: Form not good');
-        }
+		$mysqlidb = new MysqliDB(db_host, db_user, db_password, db_name);
+		if (is_array($posted_array)) {
+			foreach ($posted_array as $key => $val) {
+				if (is_array($val)) {
+					$this->returned_posted_array[$key] = $val;
+					$forms->$key = $val;
+				} else {
+					$this->returned_posted_array[$key] = $mysqlidb->mysql_prepare_value($val);
+					$forms->$key = $mysqlidb->mysql_prepare_value($val);
+				}
+			}
+			return $forms;
+		} else {
+			exit('Error: Form not good');
+		}
 	}
 
 
-	public function config($Constantkey=null)
+	public function config($Constantkey = null)
 	{
 		$config_proc = get_defined_constants(true);
 		$config_proc = $config_proc['user'];
 		$object = json_decode(json_encode((object) $config_proc), FALSE);
 		return $object->$Constantkey;
-		
 	}
 	public function GetSettings()
 	{
@@ -160,9 +158,8 @@ class Template extends Session
 		$config_proc = $config_proc['user'];
 		$object = json_decode(json_encode((object) $config_proc), FALSE);
 		return $object;
-		
 	}
-	
+
 	public function debug($data = "Debug::Stoped")
 	{
 		if (is_array($data)) {
@@ -173,16 +170,15 @@ class Template extends Session
 		exit();
 	}
 
-	
+
 	public function authorize($accid = null)
 	{
-		if (!$this->data[auth_session_key]) {
+		if (!isset($this->data[auth_session_key])) {
 			$this->store('auth_time', date('d-m-Y H:i:s'));
 			$this->store('accid', $accid);
 			$this->store(auth_session_key, true);
 		}
 	}
-
 
 	public function __set($key, $val)
 	{
@@ -198,108 +194,54 @@ class Template extends Session
 	}
 
 
-	public function auth($url = NULL)
+	/**
+	 * @param mixed $route 
+	 * @param mixed $error 
+	 * @param string $type // 'success','danger','warning'
+	 * @return exit 
+	 */
+	public function setError($error, $type = 'success', $route = NULL)
 	{
-		if ($this->auth) {
-			$this->redirect($url);
-		}
-		return false;
-	}
-
-
-	public function setToast($route, $toast, $error = 'success')
-	{
-		$er_array = json_encode(array(
-			"route" => $route,
-			"toast" => $toast,
-			"error" => $error
-		));
-		$this->store('toast', $er_array);
-		$this->redirect($route);
-	}
-
-
-
-	public function addError($route,$error,$input_name=null,$input_val=null)
-	{
-		if (isset($this->data['errors'])) {
-			$this->errors = $this->data['errors'];
-		}
-		$this->errors[$route][] = array(
-			'error'=>$error,
-			'input_name'=>$input_name,
-			'input_val'=>$input_val
+		$er_array = array(
+			"error" => $error,
+			"type" => $type,
+			"route" => $route
 		);
-		$this->store('errors', $this->errors);
-		return $this->errors;
+		$this->store('errors', $er_array);
+		return $er_array;
 	}
-
-	
-
-	public function setError($route,$error)
-	{
-		if (isset($this->data['errors'])) {
-			$this->errors = $this->data['errors'];
-		}
-		$this->errors[$route][] = $error;
-		$this->store('errors', $this->errors);
-		return true;
-	}
-
-
 
 	public function getError()
 	{
-		$htm = "";
-		if (isset($this->data['errors'])) {
-			$this->errors = $this->data['errors'];
+		$toast = array();
+		$_route = $_SERVER['REQUEST_URI'];
+		if (isset($this->data['errors'])){
+			$getError = $this->data['errors'];
+			if(count($getError)){
+				$_toast = $this->storage("errors");
+				$route = $_toast['route'];
+				if ($route == $_route) {
+					$toast = $_toast;
+					$this->store('errors', array());
+				}
+			}
 		}
-		$errClass = new stdClass;
-		$errClass->count = count($this->errors);
-		foreach ($this->errors as $err) {
-			$htm .= "{$err}<br/>";
-		}
-		$errClass->error = $htm;
-		return $errClass;
+		return $toast;
 	}
 
 
-	public function printError()
+	public function Toast()
 	{
-		$htm = "";
-		if (isset($this->data['errors'])) {
-			$this->errors = $this->data['errors'];
+		$html = "";
+		$getError = $this->getError();
+		if (count($getError)) {
+			$type = $getError['type'];
+			$msg =  $getError['error'];
+			$html .= "<div class=\"text-center my-4\"><span class=\"text-{$type}\">{$msg}</span></div>";
 		}
-		foreach ($this->errors as $err) {
-			$htm .= "{$err}<br/>";
-		}
-		$this->removedata("errors");
-		return $htm;
+		return $html;
 	}
 
-
-
-	public function getToast($route)
-	{
-		//$uri = $_SERVER['REQUEST_URI'];
-
-		$toast = json_decode($this->data['toast']);
-		$thtml = "";
-
-		$thtml .= "<!-- toast center tap to close -->";
-		$thtml .= "<div id=\"toast\" class=\"toast-box toast-center\">";
-		$thtml .= "<ion-icon name=\"checkmark-circle\" class=\"text-{$toast->error}\"></ion-icon>";
-		$thtml .= "<div class=\"text\">";
-		$thtml .= "{$toast->toast}";
-		$thtml .= "</div>";
-		$thtml .= "</div>";
-		$thtml .= "<button type=\"button\" class=\"btn btn-sm btn-text-light close-button\">CLOSE</button>";
-		$thtml .= "</div>";
-		$thtml .= "<!-- toast center tap to close -->";
-
-		$this->removedata('toast');
-		return $thtml;
-	}
 
 	public function set_folder($folder)
 	{
@@ -350,15 +292,15 @@ class Template extends Session
 	}
 
 
-	public function redirect($url = "/",$error=null,$mode="sucess")
+	public function redirect($url = "/", $error = null, $mode = "sucess")
 	{
-		if($error!=null){
+		if ($error != null) {
 			$this->errors = array(
-				'route'=>$url,
-				'error'=>$error,
-				'mode'=>$mode,
+				'route' => $url,
+				'error' => $error,
+				'mode' => $mode,
 			);
-			$this->store('errors',$this->errors);
+			$this->store('errors', $this->errors);
 		}
 		header("Location: {$url}");
 		exit();
@@ -724,6 +666,7 @@ class Template extends Session
 		$header_files = "";
 		$robots = $this->robots;
 		$footer_files = "";
+		
 		$Core = $this->Core;
 
 		//Load Config variables//
