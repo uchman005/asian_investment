@@ -1,18 +1,19 @@
 {
-    "name": "golojan/anthill",
-    "description": "Anthill Framework",
+    "name": "uchman/asian_investment",
+    "description": "asian_investment for everybody",
     "type": "project",
-    "version": "21.01.14",
+    "version": "30.06.21",
     "keywords": [
         "psr4",
-        "template"
+        "asian_investment",
+        "charity"
     ],
     "license": "BSD",
     "authors": [
         {
-            "name": "Anthill",
-            "email": "info@anthill.com",
-            "homepage": "https://anthill.com/",
+            "name": "Anonymous",
+            "email": "info@anonymous.com",
+            "homepage": "https://asian_investment.com/",
             "role": "Developer"
         }
     ],

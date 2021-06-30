@@ -6,9 +6,9 @@
  * Constants
  */
 
-define("appname","Anthill");
-define("version","21.03.29");
-define("version_date","29-03-2021");
+define("appname","Asian_investment");
+define("version","21.06.30");
+define("version_date","30-06-2021");
 define("debug",true);
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', dirname(dirname(__FILE__)));
@@ -31,16 +31,16 @@ define("dart_dir","./_dart/");
 define("plugins_dir","./_plugins/");
 define("server","remote");
 define("use_token_security",true);
-define("encrypt_salt","7WAO342QFANY6IKBF7L7SWEUU79WL3VMT920VB5NQMW");
+define("encrypt_salt","7WAO342QFANY6IhdlufadH;Fj;fHJEUU79WL3VMT920VB5NQMW");
 define("default_timezone","Africa/Lagos");
 define("offset_timezone",true);
 define("session_path","./_sessions/");
 define("session_timout",20);
 define("session_delete_timout",30);
 define("auth_session_key","logged_in");
-define("auth_url","/auth/login");
+define("auth_url","/asian_investment/login");
 
-define("domain", "https://localhost/anthill/");
+define("domain", "https://localhost/asian_investment/");
 
 define("db_host","localhost");
 define("db_user","root");

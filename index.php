@@ -5,14 +5,14 @@ define('DOT', '.');
 require_once DOT . "/bootstrap.php";
 
 //Home page//
-$Route->add('/anthill/', function () {
+$Route->add('/asian_investment/', function () {
     
     $Template = new Apps\Template;
-    $Template->addheader("docs.layouts.header");
-    $Template->addfooter("docs.layouts.footer");
-    $Template->assign("title","Anthill Home");
+    $Template->addheader("layouts.header");
+    $Template->addfooter("layouts.footer");
+    $Template->assign("title","asian_investment Home");
 
-    $Template->render("docs.index");
+    $Template->render("home");
 
 }, 'GET');
 //Home page//
@@ -23,7 +23,7 @@ $Route->add('/anthill/', function () {
 
 //Logout Sessions//
 $Route->add(
-    '/auth/logout',
+    '/asian_investment/logout',
     function () {
         $Template = new Apps\Template;
         $Template->expire();

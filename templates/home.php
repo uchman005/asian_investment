@@ -1,586 +1,573 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Bootstrap 4 project documentation theme for developers</title>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">    
-    <link rel="shortcut icon" href="favicon.ico">  
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <!-- FontAwesome JS -->
-    <script defer src="assets/fontawesome/js/all.js"></script>
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
-    <!-- Plugins CSS -->    
-    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
-    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
-      
-    <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
-    
-</head> 
-
-<body class="body-green">
-    <div class="page-wrapper">
-        <!-- ******Header****** -->
-        <header id="header" class="header">
-            <div class="container">
-                <div class="branding">
-                    <h1 class="logo">
-                        <a href="index.html">
-                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
-                            <span class="text-highlight">Pretty</span><span class="text-bold">Docs</span>
-                        </a>
-                    </h1>
-                    
-                </div><!--//branding-->
-                
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Quick Start</li>
-                </ol>
-                
-                <div class="top-search-box">
-	                 <form class="form-inline search-form justify-content-center" action="" method="get">
-	            
-			            <input type="text" placeholder="Search..." name="search" class="form-control search-input">
-			            
-			            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
-			            
-			        </form>
-                </div>
-                
-            </div><!--//container-->
-        </header><!--//header-->
-        <div class="doc-wrapper">
-            <div class="container">
-                <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i> Quick Start</h1>
-                    <div class="meta"><i class="far fa-clock"></i> Last updated: Oct 12th, 2020</div>
-                </div><!--//doc-header-->
-                <div class="doc-body row">
-                    <div class="doc-content col-md-9 col-12 order-1">
-                        <div class="content-inner">
-                            <section id="download-section" class="doc-section">
-                                <h2 class="section-title">Download</h2>
-                                <div class="section-block">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec imperdiet turpis. Curabitur aliquet pulvinar ultrices. Etiam at posuere leo. Proin ultrices ex et dapibus feugiat <a href="#">link example</a> aenean purus leo, faucibus at elit vel, aliquet scelerisque dui. Etiam quis elit euismod, imperdiet augue sit amet, imperdiet odio. Aenean sem erat, hendrerit  eu gravida id, dignissim ut ante. Nam consequat porttitor libero euismod congue. 
-                                    </p>
-                                    <a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/prettydocs-free-bootstrap-theme-for-developers-and-startups/" class="btn btn-green" target="_blank"><i class="fas fa-download"></i> Download PrettyDocs</a>
+    <div class="banner-area-two">
+        <div class="banner-slider-two owl-theme owl-carousel">
+            <div class="banner-item banner-bg-two">
+                <div class="d-table">
+                    <div class="d-table-cell">
+                        <div class="container">
+                            <div class="banner-content">
+                                <span>Your Financial Status Is Good Hands</span>
+                                <h1>Financial Assistance With True Purpose</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ipsum suspendisse ultrices gravida. Risus commodo </p>
+                                <div class="banner-btn-area">
+                                    <a class="common-btn two" href="./contact">
+                                        Contact Us
+                                        <span></span>
+                                    </a>
                                 </div>
-                            </section><!--//doc-section-->
-                            <section id="installation-section" class="doc-section">
-                                <h2 class="section-title">Installation</h2>
-                                <div id="step1"  class="section-block">
-                                    <h3 class="block-title">Step One</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.
-                                    </p>
-                                    <div class="code-block">
-                                        <h6>Default code example:</h6>
-                                        <p><code>bower install &lt;package&gt;</code></p>
-                                        <p><code>npm install &lt;package&gt;</code></p>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="step2"  class="section-block">
-                                    <h3 class="block-title">Step Two</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                                    </p>
-                                    <div class="row">
-                                        <div class="col-md-6 col-12">
-                                            <h6>Un-ordered list example</h6>
-                                            <ul class="list">
-        										<li>Lorem ipsum dolor sit amet.</li>
-        										<li>Aliquam tincidunt mauris.</li>
-        										<li>Ultricies eget vel aliquam libero.
-        											<ul>
-        												<li>Turpis pulvinar</li>
-        												<li>Feugiat scelerisque</li>
-        												<li>Ut tincidunt</li>
-        											</ul>
-        										</li>
-        										<li>Pellentesque habitant morbi.</li>
-        										<li>Praesent dapibus, neque id.</li>
-        									</ul>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <h6>Ordered list example</h6>
-                                            <ol class="list">
-        										<li>Lorem ipsum dolor sit amet.</li>
-        										<li>Aliquam tincidunt mauris.</li>
-        										<li>Ultricies eget vel aliquam libero.
-        											<ul>
-        												<li>Turpis pulvinar</li>
-        												<li>Feugiat scelerisque</li>
-        												<li>Ut tincidunt</li>
-        											</ul>
-        										</li>
-        										<li>Pellentesque habitant morbi.</li>
-        										<li>Praesent dapibus, neque id.</li>
-        									</ol>
-                                        </div>
-                                    </div><!--//row-->
-                                </div><!--//section-block-->
-                                <div id="step3"  class="section-block">
-                                    <h3 class="block-title">Step Three</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.
-                                    </p>
-                                </div><!--//section-block-->
-                            </section><!--//doc-section-->
-                            
-                            <section id="code-section" class="doc-section">
-                                <h2 class="section-title">Code</h2>
-                                <div class="section-block">
-                                    <p>
-                                        <a href="https://prismjs.com/" target="_blank">PrismJS</a> is used as the syntax highlighter here. You can <a href="https://prismjs.com/download.html" target="_blank">build your own version</a> via their website should you need to.
-                                    </p>
-                                    
-                                </div><!--//section-block-->
-                                <div id="html" class="section-block">
-                                    
-                                    <div class="callout-block callout-success">
-                                        <div class="icon-holder">
-                                            <i class="fas fa-thumbs-up"></i>
-                                        </div><!--//icon-holder-->
-                                        <div class="content">
-                                            <h4 class="callout-title">Useful Tip:</h4>
-                                            <p>You can use this online <a href="https://mothereff.in/html-entities" target="_blank">HTML entity encoder/decoder</a> to generate your code examples.</p>
-                                        </div><!--//content-->
-                                    </div>
-                                    <div class="code-block">
-                                        <h6>HTML Code Example</h6>
-                                        <pre><code class="language-markup">&lt;!DOCTYPE html&gt; 
-&lt;html lang=&quot;en&quot;&gt; 
-    ...
-    &lt;div class=&quot;jumbotron&quot;&gt; 
-        &lt;h1&gt;Hello, world!&lt;/h1&gt; 
-        &lt;p&gt;...&lt;/p&gt; 
-        &lt;p&gt;&lt;a class=&quot;btn btn-primary btn-lg&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Learn more&lt;/a&gt;&lt;/p&gt; 
-    &lt;/div&gt;
-    &lt;div class=&quot;jumbotron&quot;&gt; 
-        &lt;h1&gt;Hello, world!&lt;/h1&gt; 
-        &lt;p&gt;...&lt;/p&gt; 
-        &lt;p&gt;&lt;a class=&quot;btn btn-primary btn-lg&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Learn more&lt;/a&gt;&lt;/p&gt; 
-    &lt;/div&gt;
-    ...
-&lt;/html&gt;</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="css" class="section-block">
-                                    <div class="code-block">
-                                        <h6>CSS Code Example</h6>
-                                        <pre><code class="language-css">/* ======= Base Styling ======= */
-body {
-    font-family: 'Open Sans', arial, sans-serif; 
-    color: #333; 
-    font-size: 16px; 
-    -webkit-font-smoothing: antialiased; 
-    -moz-osx-font-smoothing: grayscale; 
-}</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="sass" class="section-block">
-                                    <div class="code-block">
-                                        <h6>SCSS Code Example</h6>
-                                        <pre><code class="language-css">@mixin transform($property) {
-  -webkit-transform: $property;
-      -ms-transform: $property;
-          transform: $property;
-}
-
-.box { @include transform(rotate(30deg)); }</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="less" class="section-block">
-                                    <div class="code-block">
-                                        <h6>LESS Code Example</h6>
-                                        <pre><code class="language-css">@base: #f04615;
-@width: 0.5;
-
-.class {
-  width: percentage(@width); // returns &#x60;50%&#x60;
-  color: saturate(@base, 5%);
-  background-color: spin(lighten(@base, 25%), 8);
-}</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="javascript" class="section-block">
-                                    <div class="code-block">
-                                        <h6>JavaScript Code Example</h6>
-                                        <pre><code class="language-javascript">&lt;script&gt; 
-    function myFunction(a, b) { 
-        return a * b; 
-    } 
-    
-    document.getElementById(&quot;demo&quot;).innerHTML = myFunction(4, 3); 
-&lt;/script&gt;</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="python" class="section-block">
-                                    <div class="code-block">
-                                        <h6>Python Code Example</h6>
-                                        <pre><code class="language-python">&gt;&gt;&gt; x = int(input(&quot;
-Please enter an integer: &quot;)) Please enter an integer: 42 
-&gt;&gt;&gt; if x &lt; 0: 
-... x = 0 
-... print('Negative changed to zero') 
-... elif x == 0: 
-... print('Zero') 
-... elif x == 1: 
-... print('Single') 
-... else: 
-... print('More') 
-... More</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="php" class="section-block">
-                                    <div class="code-block">
-                                        <h6>PHP Code Example</h6>
-                                        <pre><code class="language-php">&lt;?php 
-$txt = &quot;Hello world!&quot;; 
-$x = 5; 
-$y = 10.5; 
-
-echo $txt; 
-echo &quot;&lt;br&gt;&quot;; 
-echo $x; 
-echo &quot;&lt;br&gt;&quot;; 
-echo $y; 
-?&gt;</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="handlebars" class="section-block">
-                                    <div class="code-block">
-                                        <h6>Handlebars Code Example</h6>
-                                        <pre><code class="language-handlebars">Handlebars.registerHelper('list', function(items, options) { 
-  var out = &quot;&lt;ul&gt;&quot;; 
-  
-  for(var i=0, l=items.length; i&lt;l; i++) { 
-    out = out + &quot;&lt;li&gt;&quot; + options.fn(items[i]) + &quot;&lt;/li&gt;&quot;; 
-  } 
-  
-  return out + &quot;&lt;/ul&gt;&quot;; 
-});</code></pre>
-                                    </div><!--//code-block-->
-                                    <div class="code-block">
-                                        <h6>Git Code Example</h6>
-                                        <pre><code class="language-git">$ git add Documentation.txt</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                            </section><!--//doc-section-->
-                            <section id="callouts-section" class="doc-section">
-                                <h2 class="section-title">Callouts</h2>
-                                <div class="section-block">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. 
-                                    </p>
-                                </div>
-
-                                <div class="section-block">
-                                    <div class="callout-block callout-info">
-                                        <div class="icon-holder">
-                                            <i class="fas fa-info-circle"></i>
-                                        </div><!--//icon-holder-->
-                                        <div class="content">
-                                            <h4 class="callout-title">Aenean imperdiet</h4>
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium <code>&lt;code&gt;</code> , Nemo enim ipsam voluptatem quia voluptas <a href="#">link example</a> sit aspernatur aut odit aut fugit.</p>
-                                        </div><!--//content-->
-                                    </div><!--//callout-block-->
-                                    
-                                    <div class="callout-block callout-warning">
-                                        <div class="icon-holder">
-                                            <i class="fas fa-bug"></i>
-                                        </div><!--//icon-holder-->
-                                        <div class="content">
-                                            <h4 class="callout-title">Morbi posuere</h4>
-                                            <p>Nunc hendrerit odio quis dignissim efficitur. Proin ut finibus libero. Morbi posuere fringilla felis eget sagittis. Fusce sem orci, cursus in tortor <a href="#">link example</a> tellus vel diam viverra elementum.</p>
-                                        </div><!--//content-->
-                                    </div><!--//callout-block-->
-                                    
-                                    <div class="callout-block callout-success">
-                                        <div class="icon-holder">
-                                            <i class="fas fa-thumbs-up"></i>
-                                        </div><!--//icon-holder-->
-                                        <div class="content">
-                                            <h4 class="callout-title">Lorem ipsum dolor sit amet</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <a href="#">Link example</a> aenean commodo ligula eget dolor.</p>
-                                        </div><!--//content-->
-                                    </div><!--//callout-block-->
-                                    
-                                    <div class="callout-block callout-danger">
-                                        <div class="icon-holder">
-                                            <i class="fas fa-exclamation-triangle"></i>
-                                        </div><!--//icon-holder-->
-                                        <div class="content">
-                                            <h4 class="callout-title">Interdum et malesuada</h4>
-                                            <p>Morbi eget interdum sapien. Donec sed turpis sed nulla lacinia accumsan vitae ut tellus. Aenean vestibulum <a href="#">Link example</a> maximus ipsum vel dignissim. Morbi ornare elit sit amet massa feugiat, viverra dictum ipsum pellentesque. </p>
-                                        </div><!--//content-->
-                                    </div><!--//callout-block-->
-                                </div>
-                            </section><!--//doc-section-->
-                            <section id="tables-section" class="doc-section">
-                                <h2 class="section-title">Tables</h2>
-                                <div class="section-block">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.
-                                    </p>
-                                </div>
-                                <div class="section-block">
-                                    <h6>Basic Table</h6>
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>First Name</th>
-                                                    <th>Last Name</th>
-                                                    <th>Username</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Jacob</td>
-                                                    <td>Thornton</td>
-                                                    <td>@fat</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>@twitter</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div><!--//table-responsive-->
-                                    <h6>Striped Table</h6>
-                                    <div class="table-responsive">
-                                        <table class="table table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>First Name</th>
-                                                    <th>Last Name</th>
-                                                    <th>Username</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Jacob</td>
-                                                    <td>Thornton</td>
-                                                    <td>@fat</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>@twitter</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div><!--//table-responsive-->
-                                    <h6>Bordered Table</h6>
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>First Name</th>
-                                                    <th>Last Name</th>
-                                                    <th>Username</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Jacob</td>
-                                                    <td>Thornton</td>
-                                                    <td>@fat</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>@twitter</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div><!--//table-responsive-->
-                                </div><!--//section-block-->
-                            </section><!--//doc-section-->
-                            <section id="buttons-section" class="doc-section">
-                                <h2 class="section-title">Buttons</h2>
-                                <div class="section-block">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec imperdiet turpis. Curabitur aliquet pulvinar ultrices. Etiam at posuere leo. Proin ultrices ex et dapibus feugiat <a href="#">link example</a> aenean purus leo, faucibus at elit vel, aliquet scelerisque dui. Etiam quis elit euismod, imperdiet augue sit amet, imperdiet odio. Aenean sem erat, hendrerit  eu gravida id, dignissim ut ante. Nam consequat porttitor libero euismod congue. 
-                                    </p>
-                                    <div class="row">
-                                        <div class="col-md-6 col-12">
-                                            <h6>Basic Buttons</h6>
-                                            <ul class="list list-unstyled">
-                                                <li><a href="#" class="btn btn-primary">Primary Button</a></li>
-                                                <li><a href="#" class="btn btn-green">Green Button</a></li>
-                                                <li><a href="#" class="btn btn-blue">Blue Button</a></li>
-                                                <li><a href="#" class="btn btn-orange">Orange Button</a></li>
-                                                <li><a href="#" class="btn btn-red">Red Button</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <h6>CTA Buttons</h6>
-                                            <ul class="list list-unstyled">
-                                                <li><a href="#" class="btn btn-primary btn-cta"><i class="fas fa-download"></i> Download Now</a></li>
-                                                <li><a href="#" class="btn btn-green btn-cta"><i class="fas fa-code-branch"></i> Fork Now</a></li>
-                                                <li><a href="#" class="btn btn-blue btn-cta"><i class="fas fa-play-circle"></i> Find Out Now</a></li>
-                                                <li><a href="#" class="btn btn-orange btn-cta"><i class="fas fa-bug"></i> Report Bugs</a></li>
-                                                <li><a href="#" class="btn btn-red btn-cta"><i class="fas fa-exclamation-circle"></i> Submit Issues</a></li>
-                                            </ul>
-                                        </div>
-                                    </div><!--//row-->
-                                </div><!--//section-block-->
-                            </section><!--//doc-section-->
-                            <section id="video-section" class="doc-section">
-                                <h2 class="section-title">Video</h2>
-                                <div class="section-block">
-                                    <div class="row">
-                                        <div class="col-md-6 col-12">
-                                            <h6>Responsive Video 16:9</h6>
-                                            <!-- 16:9 aspect ratio -->
-                                            <div class="embed-responsive embed-responsive-16by9">
-                                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ejBkOjEG6F0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <h6>Responsive Video 4:3</h6>
-                                            <!-- 4:3 aspect ratio -->
-                                            <div class="embed-responsive embed-responsive-4by3">
-                                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ejBkOjEG6F0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                                            </div>
-                                        </div>
-                                    </div><!--//row-->
-                                </div><!--//section-block-->
-                            <section id="icons-section" class="doc-section">
-                                <h2 class="section-title">Icons</h2>
-                                <div class="section-block">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec imperdiet turpis. Curabitur aliquet pulvinar ultrices. Etiam at posuere leo. Proin ultrices ex et dapibus feugiat <a href="#">link example</a> aenean purus leo, faucibus at elit vel, aliquet scelerisque dui. Etiam quis elit euismod, imperdiet augue sit amet, imperdiet odio. Aenean sem erat, hendrerit  eu gravida id, dignissim ut ante. Nam consequat porttitor libero euismod congue. 
-                                    </p>
-                                </div><!--//section-block-->
-                                <div class="section-block">
-                                    <h6>Elegant Icon Font</h6>
-                                    <a href="https://www.elegantthemes.com/blog/resources/elegant-icon-font" target="_blank"><img class="img-fluid" src="assets/images/demo/elegant-icon-font.jpg" alt="elegant icons" /></a>
-                                </div><!--//section-block-->
-                                <div class="section-block">
-                                    <h6>FontAwesome Icon Font</h6>
-                                    <a href="https://fortawesome.github.io/Font-Awesome/" target="_blank"><img class="img-fluid" src="assets/images/demo/fontawesome-icons.png" alt="fontawesome" /></a>
-                                </div><!--//section-block-->
-                                
-                            </section><!--//doc-section-->
-                            
-                            </section><!--//doc-section-->
-                        </div><!--//content-inner-->
-                    </div><!--//doc-content-->
-                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
-                        <div id="doc-nav" class="doc-nav">
-	                        
-	                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
-	                                <a class="nav-link scrollto" href="#download-section">Download</a>
-	                                <a class="nav-link scrollto" href="#installation-section">Installation</a>
-                                    <nav class="doc-sub-menu nav flex-column">
-                                        <a class="nav-link scrollto" href="#step1">Step One</a>
-                                        <a class="nav-link scrollto" href="#step2">Step Two</a>
-                                        <a class="nav-link scrollto" href="#step3">Step Three</a>
-                                    </nav><!--//nav-->
-	                                <a class="nav-link scrollto" href="#code-section">Code</a>
-                                    <nav class="doc-sub-menu nav flex-column">
-                                        <a class="nav-link scrollto" href="#html">HTML</a>
-                                        <a class="nav-link scrollto" href="#css">CSS</a>
-                                        <a class="nav-link scrollto" href="#sass">Sass</a>
-                                        <a class="nav-link scrollto" href="#less">LESS</a>
-                                        <a class="nav-link scrollto" href="#javascript">JavaScript</a>
-                                        <a class="nav-link scrollto" href="#python">Python</a>
-                                        <a class="nav-link scrollto" href="#php">PHP</a>
-                                        <a class="nav-link scrollto" href="#handlebars">Handlebars</a>
-                                    </nav><!--//nav-->
-	                                <a class="nav-link scrollto" href="#callouts-section">Callouts</a>
-	                                <a class="nav-link scrollto" href="#tables-section">Tables</a>
-	                                <a class="nav-link scrollto" href="#buttons-section">Buttons</a>
-	                                <a class="nav-link scrollto" href="#video-section">Video</a>
-	                                <a class="nav-link scrollto" href="#icons-section">Icons</a>
-	                            </nav><!--//doc-menu-->
-	                        
-                        </div>
-                    </div><!--//doc-sidebar-->
-                </div><!--//doc-body-->              
-            </div><!--//container-->
-        </div><!--//doc-wrapper-->
-        
-        <div id="promo-block" class="promo-block">
-            <div class="container">
-                <div class="promo-block-inner">
-                    <h3 class="promo-title text-center"><i class="fas fa-heart"></i> <a href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/" target="_blank">Are you an ambitious and entrepreneurial developer?</a></h3>
-                    <div class="row">
-                        <div class="figure-holder col-lg-5 col-md-6 col-12">
-                            <div class="figure-holder-inner">
-                                <a href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/" target="_blank"><img class="img-fluid" src="assets/images/demo/instance-promo.jpg" alt="Instance Theme" /></a>
-                                <a class="mask" href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/"><i class="icon fa fa-heart pink"></i></a>
-                                
                             </div>
-                        </div><!--//figure-holder-->
-                        <div class="content-holder col-lg-7 col-md-6 col-12">
-                            <div class="content-holder-inner">
-                                <div class="desc">
-                                    <h4 class="content-title"><strong> Instance - Bootstrap 4 Portfolio Theme for Aspiring Developers</strong></h4>
-                                    <p>Check out <a href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/" target="_blank">Instance</a> - a Bootstrap personal portfolio theme I created for developers. The UX design is focused on selling a developer’s skills and experience to potential employers or clients, and has <strong class="highlight">all the winning ingredients to get you hired</strong>. It’s not only a HTML site template but also a marketing framework for you to <strong class="highlight">build an impressive online presence with a high conversion rate</strong>. </p>
-                                    <p><strong class="highlight">[Tip for developers]:</strong> If your project is Open Source, you can use this area to promote your other projects or hold third party adverts like Bootstrap and FontAwesome do!</p>
-                                    <a class="btn btn-cta" href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/" target="_blank"><i class="fas fa-external-link-alt"></i> View Demo</a>
-                                    
-                                </div><!--//desc-->
-                                
-                                
-                                <div class="author"><a href="https://themes.3rdwavemedia.com">Xiaoying Riley</a></div>
-                            </div><!--//content-holder-inner-->
-                        </div><!--//content-holder-->
-                    </div><!--//row-->
-                </div><!--//promo-block-inner-->  
-            </div><!--//container-->
-        </div><!--//promo-block-->
-        
-    </div><!--//page-wrapper-->
-    
-    <footer id="footer" class="footer text-center">
-        <div class="container">
-            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
-            
-        </div><!--//container-->
-    </footer><!--//footer-->
-    
-     
-    <!-- Main Javascript -->          
-    <script type="text/javascript" src="assets/plugins/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
-    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>      
-    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                             
-    <script type="text/javascript" src="assets/js/main.js"></script>
-    
-</body>
-</html> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="banner-item banner-bg-three">
+                <div class="d-table">
+                    <div class="d-table-cell">
+                        <div class="container">
+                            <div class="banner-content">
+                                <span>Your Financial Status Is Good Hands</span>
+                                <h1>Finon Will Give Business Opportunity</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ipsum suspendisse ultrices gravida. Risus commodo </p>
+                                <div class="banner-btn-area">
+                                    <a class="common-btn two" href="./contact">
+                                        Contact Us
+                                        <span></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+    <div class="about-area-two pt-100 pb-70">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <div class="section-title two">
+                            <span class="sub-title">About Company</span>
+                            <h2>We Help Our Clients To Achieve Their Desire Goals</h2>
+                        </div>
+                        <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra </p>
+                        <ul>
+                            <li>
+                                <i class="flaticon-bar-chart"></i>
+                                <h3>Support On Raising Funds</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo </p>
+                            </li>
+                            <li>
+                                <i class="flaticon-consulting"></i>
+                                <h3>Outsourced Consult Business</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo </p>
+                            </li>
+                        </ul>
+                        <a class="common-btn two" href="./about">
+                            Read More
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-img">
+                        <img src="<?= $assets ?>/img/about/about4.jpg" alt="About">
+                        <img src="<?= $assets ?>/img/about/about-shape6.png" alt="Shape">
+                        <img src="<?= $assets ?>/img/about/about-shape7.png" alt="Shape">
+                        <img src="<?= $assets ?>/img/about/about-shape8.png" alt="Shape">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="projects-area pt-100 pb-70">
+        <div class="container">
+            <div class="section-title two">
+                <span class="sub-title">Latest Projects</span>
+                <h2>We Have Completed Latest Projects</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="projects-item">
+                        <img src="<?= $assets ?>/img/projects/projects1.jpg" alt="Projects">
+                        <div class="inner">
+                            <h3>
+                                <a href="./project-details">Investment Trading</a>
+                            </h3>
+                            <a class="projects-btn" href="#">Trading</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="projects-item">
+                        <img src="<?= $assets ?>/img/projects/projects2.jpg" alt="Projects">
+                        <div class="inner">
+                            <h3>
+                                <a href="./project-details">Financial Growth</a>
+                            </h3>
+                            <a class="projects-btn" href="#">Finance</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="projects-item">
+                        <img src="<?= $assets ?>/img/projects/projects3.jpg" alt="Projects">
+                        <div class="inner">
+                            <h3>
+                                <a href="./project-details">Fund Management</a>
+                            </h3>
+                            <a class="projects-btn" href="#">Management</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="projects-item">
+                        <img src="<?= $assets ?>/img/projects/projects4.jpg" alt="Projects">
+                        <div class="inner">
+                            <h3>
+                                <a href="./project-details">Online Payment</a>
+                            </h3>
+                            <a class="projects-btn" href="#">Payment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="services-area-two pt-100 pb-70">
+        <div class="container">
+            <div class="section-title two">
+                <span class="sub-title">Services</span>
+                <h2>Exceptional Finon Services</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="services-item-two">
+                        <div class="top">
+                            <img src="<?= $assets ?>/img/services/services1.jpg" alt="Services">
+                        </div>
+                        <div class="bottom">
+                            <h3>
+                                <a href="./service-details">Invest Planning</a>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                            <div class="services-btn">
+                                <i class='bx bx-right-arrow-alt'></i>
+                                <a href="./service-details">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="services-item-two">
+                        <div class="top">
+                            <img src="<?= $assets ?>/img/services/services2.jpg" alt="Services">
+                        </div>
+                        <div class="bottom">
+                            <h3>
+                                <a href="./service-details">Financial Consultancy</a>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                            <div class="services-btn">
+                                <i class='bx bx-right-arrow-alt'></i>
+                                <a href="./service-details">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="services-item-two">
+                        <div class="top">
+                            <img src="<?= $assets ?>/img/services/services3.jpg" alt="Services">
+                        </div>
+                        <div class="bottom">
+                            <h3>
+                                <a href="./service-details">Online Banking & Loans</a>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                            <div class="services-btn">
+                                <i class='bx bx-right-arrow-alt'></i>
+                                <a href="./service-details">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="services-item-two">
+                        <div class="top">
+                            <img src="<?= $assets ?>/img/services/services4.jpg" alt="Services">
+                        </div>
+                        <div class="bottom">
+                            <h3>
+                                <a href="./service-details">Travel Insurance</a>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                            <div class="services-btn">
+                                <i class='bx bx-right-arrow-alt'></i>
+                                <a href="./service-details">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="services-item-two">
+                        <div class="top">
+                            <img src="<?= $assets ?>/img/services/services5.jpg" alt="Services">
+                        </div>
+                        <div class="bottom">
+                            <h3>
+                                <a href="./service-details">Business Advisor</a>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                            <div class="services-btn">
+                                <i class='bx bx-right-arrow-alt'></i>
+                                <a href="./service-details">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="services-item-two">
+                        <div class="top">
+                            <img src="<?= $assets ?>/img/services/services6.jpg" alt="Services">
+                        </div>
+                        <div class="bottom">
+                            <h3>
+                                <a href="./service-details">Education Support</a>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                            <div class="services-btn">
+                                <i class='bx bx-right-arrow-alt'></i>
+                                <a href="./service-details">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="projects-area-two pt-100 pb-70">
+        <div class="container">
+            <div class="section-title two">
+                <span class="sub-title">Projects</span>
+                <h2>Our Completed Projects</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="projects-item-two">
+                        <img src="<?= $assets ?>/img/projects/project-shape1.png" alt="Shape">
+                        <img src="<?= $assets ?>/img/projects/project-shape2.png" alt="Shape">
+                        <i class="flaticon-goal icon"></i>
+                        <h3>
+                            <a href="./project-details">Fast Executions</a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor facilisis.</p>
+                        <a class="projects-btn" href="./project-details">
+                            Read More
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="projects-item-two">
+                        <img src="<?= $assets ?>/img/projects/project-shape1.png" alt="Shape">
+                        <img src="<?= $assets ?>/img/projects/project-shape2.png" alt="Shape">
+                        <i class="flaticon-support icon"></i>
+                        <h3>
+                            <a href="./project-details">Guide & Support</a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor facilisis.</p>
+                        <a class="projects-btn" href="./project-details">
+                            Read More
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="projects-item-two">
+                        <img src="<?= $assets ?>/img/projects/project-shape1.png" alt="Shape">
+                        <img src="<?= $assets ?>/img/projects/project-shape2.png" alt="Shape">
+                        <i class="flaticon-investment-insurance icon"></i>
+                        <h3>
+                            <a href="./project-details">Financial Secure</a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor facilisis.</p>
+                        <a class="projects-btn" href="./project-details">
+                            Read More
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="projects-item-two">
+                        <img src="<?= $assets ?>/img/projects/project-shape1.png" alt="Shape">
+                        <img src="<?= $assets ?>/img/projects/project-shape2.png" alt="Shape">
+                        <i class="flaticon-refinancing icon"></i>
+                        <h3>
+                            <a href="./project-details">Refinancing</a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor facilisis.</p>
+                        <a class="projects-btn" href="./project-details">
+                            Read More
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="counter-area ptb-100">
+        <div class="container">
+            <div class="counter-wrap">
+                <div class="counter-shape">
+                    <img src="<?= $assets ?>/img/counter-shape1.png" alt="Shape">
+                    <img src="<?= $assets ?>/img/counter-shape2.png" alt="Shape">
+                </div>
+                <div class="row">
+                    <div class="col-6 col-sm-6 col-lg-3">
+                        <div class="counter-item">
+                            <i class="flaticon-project-management"></i>
+                            <h3>
+                                <span class="odometer" data-count="3569">00</span>
+                            </h3>
+                            <p>Projects Completed</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-lg-3">
+                        <div class="counter-item">
+                            <i class="flaticon-like"></i>
+                            <h3>
+                                <span class="odometer" data-count="4269">00</span>
+                            </h3>
+                            <p>Satisfied Clients</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-lg-3">
+                        <div class="counter-item">
+                            <i class="flaticon-trophy"></i>
+                            <h3>
+                                <span class="odometer" data-count="6421">00</span>
+                            </h3>
+                            <p>International Awards</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-lg-3">
+                        <div class="counter-item right-border">
+                            <i class="flaticon-team"></i>
+                            <h3>
+                                <span class="odometer" data-count="3351">00</span>
+                            </h3>
+                            <p>Team Members</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="video-area">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="video-item">
+                    <div class="video-wrap">
+                        <a href="#" class="popup-youtube">
+                            <i class='bx bx-play'></i>
+                        </a>
+                    </div>
+                    <span>Watch Our Latest Video For Better Innovation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="works-area-two ptb-100">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="works-img">
+                        <img src="<?= $assets ?>/img/works-shape1.png" alt="Shape">
+                        <img src="<?= $assets ?>/img/works-main.png" alt="Works">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="works-content">
+                        <div class="section-title two">
+                            <span class="sub-title">Working Process</span>
+                            <h2>How Does It Works</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt labore dolore magna aliqua.</p>
+                        </div>
+                        <ul>
+                            <li>
+                                <i class='bx bx-check'></i>
+                                <h3>Select Account & Terms</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </li>
+                            <li>
+                                <i class='bx bx-check'></i>
+                                <h3>Inform Your Personal Information</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </li>
+                            <li>
+                                <i class='bx bx-check'></i>
+                                <h3>Get Improved In 24 Hours</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </li>
+                        </ul>
+                        <a class="common-btn two" href="#">
+                            Learn More
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="book-area pb-100">
+        <div class="container">
+            <div class="book-content">
+                <div class="book-shape">
+                    <img src="<?= $assets ?>/img/book-shape3.png" alt="Shape">
+                    <img src="<?= $assets ?>/img/book-shape4.png" alt="Shape">
+                </div>
+                <h2>Are You Ready? Book Appointment Now</h2>
+                <p>Get your Quote or Call <a href="tel:080569899563">(080) 569 899 563</a></p>
+                <a class="common-btn" href="#">
+                    Read More
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="testimonials-area-two ptb-100">
+        <div class="container">
+            <div class="section-title two">
+                <span class="sub-title">Testimonials</span>
+                <h2>What Our Clients Says</h2>
+            </div>
+            <div class="testimonials-slider owl-theme owl-carousel">
+                <div class="testimonials-item">
+                    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </h2>
+                    <img src="<?= $assets ?>/img/testimonials-thumb1.jpg" alt="Testimonials">
+                    <h3>Aliza Trupa</h3>
+                    <span>CEO of Finance & Banking</span>
+                    <i class='bx bxs-quote-alt-left bx-flip-horizontal'></i>
+                </div>
+                <div class="testimonials-item">
+                    <h2>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</h2>
+                    <img src="<?= $assets ?>/img/testimonials-thumb2.jpg" alt="Testimonials">
+                    <h3>Tom Henry</h3>
+                    <span>Director</span>
+                    <i class='bx bxs-quote-alt-left bx-flip-horizontal'></i>
+                </div>
+                <div class="testimonials-item">
+                    <h2>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing</h2>
+                    <img src="<?= $assets ?>/img/testimonials-thumb3.jpg" alt="Testimonials">
+                    <h3>Micheal Shon</h3>
+                    <span>Manager</span>
+                    <i class='bx bxs-quote-alt-left bx-flip-horizontal'></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="blog-area two pt-100 pb-70">
+        <div class="container">
+            <div class="section-title two">
+                <span class="sub-title">Latest News</span>
+                <h2>Latest News From Blog</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="blog-item">
+                        <div class="top">
+                            <img src="<?= $assets ?>/img/blog/blog1.jpg" alt="Blog">
+                        </div>
+                        <div class="bottom">
+                            <ul>
+                                <li>
+                                    <i class='bx bx-user'></i>
+                                    by
+                                    <a href="#">Admin</a>
+                                </li>
+                                <li>
+                                    <i class='bx bx-calendar'></i>
+                                    27 November, 2020
+                                </li>
+                            </ul>
+                            <h3>
+                                <a href="./blog-details">Financial planning is the best invest for corporate business</a>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                            <a class="blog-btn" href="./blog-details">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="blog-item">
+                        <div class="top">
+                            <img src="<?= $assets ?>/img/blog/blog2.jpg" alt="Blog">
+                        </div>
+                        <div class="bottom">
+                            <ul>
+                                <li>
+                                    <i class='bx bx-user'></i>
+                                    by
+                                    <a href="#">Admin</a>
+                                </li>
+                                <li>
+                                    <i class='bx bx-calendar'></i>
+                                    28 November, 2020
+                                </li>
+                            </ul>
+                            <h3>
+                                <a href="./blog-details">Largest demand partnership building with agency</a>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                            <a class="blog-btn" href="./blog-details">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
+                    <div class="blog-item">
+                        <div class="top">
+                            <img src="<?= $assets ?>/img/blog/blog3.jpg" alt="Blog">
+                        </div>
+                        <div class="bottom">
+                            <ul>
+                                <li>
+                                    <i class='bx bx-user'></i>
+                                    by
+                                    <a href="#">Admin</a>
+                                </li>
+                                <li>
+                                    <i class='bx bx-calendar'></i>
+                                    29 November, 2020
+                                </li>
+                            </ul>
+                            <h3>
+                                <a href="./blog-details">How to become top conference for business growth</a>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                            <a class="blog-btn" href="./blog-details">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
