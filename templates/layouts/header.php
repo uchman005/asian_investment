@@ -155,7 +155,7 @@
                             <li class="nav-item">
                             </li>
                             <li class="nav-item">
-                                <a href="./project" class="nav-link<?= $menukey == 'project' ? 'active' : null ?>">Projects</a>
+                                <a href="./projects" class="nav-link<?= $menukey == 'projects' ? ' active' : null ?>">Projects</a>
                                 <!-- <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a href="projects.html" class="nav-link">Projects Style One</a>
@@ -180,7 +180,7 @@
                                 </ul>
                             </li> -->
                             <li class="nav-item">
-                                <a href="./contact" class="nav-link<?= $menukey == 'contact' ? 'active' : null ?>">Contact</a>
+                                <a href="./contact" class="nav-link<?= $menukey == 'contact' ? ' active' : null ?>">Contact Us</a>
                             </li>
                         </ul>
                         <div class="side-nav">
@@ -193,7 +193,7 @@
                                 </select> -->
                             </div>
                             <a class="consultant-btn" href="#">
-                                Fund Project
+                                Get Funding
                             </a>
                         </div>
                     </div>
