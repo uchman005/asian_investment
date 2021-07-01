@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+
+    <base href="<?= domain ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="<?= $assets ?>/css/bootstrap.min.css">
@@ -27,7 +29,7 @@
     <link rel="stylesheet" href="<?= $assets ?>/css/style.css">
 
     <link rel="stylesheet" href="<?= $assets ?>/css/responsive.css">
-    <title>Finon - Finance and Investment HTML Template</title>
+    <title><?= $title ?></title>
     <link rel="icon" type="image/png" href="<?= $assets ?>/img/favicon.png">
 </head>
 
@@ -59,7 +61,7 @@
                             </li>
                             <li>
                                 <i class='bx bx-mail-send'></i>
-                                <a href="/cdn-cgi/l/email-protection#e189848d8d8ea187888f8e8fcf828e8c"><span class="__cf_email__" data-cfemail="81e9e4ededeec1e7e8efeeefafe2eeec">[email&#160;protected]</span></a>
+                                <a href=""><span class="__cf_email__" data-cfemail="81e9e4ededeec1e7e8efeeefafe2eeec">[email&#160;protected]</span></a>
                             </li>
                         </ul>
                     </div>

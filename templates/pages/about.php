@@ -18,7 +18,7 @@
     </div>
 </div>
 
- 
+
 <div class="about-area ptb-100">
     <div class="about-shape">
         <img src="<?= $assets ?>/img/about/about-shape1.png" alt="Shape">
@@ -56,9 +56,12 @@
                         <h2>We Help Our Clients To Achieve Their Desire Goals</h2>
                     </div>
                     <div class="middle">
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra </span>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
-                            to using 'Content here, content here.</p>
+                        <p>
+                            We are a very low interest rate funding organization for 
+                            businesses and non for profit organizations. 
+                            Our greatest motive is to provide funding or projects which plays a big role in the development of the society. 
+                            We stand as a big contrast to banks and other financial institutions which are only interested in making profits.
+                        </p>
                     </div>
                     <div class="bottom">
                         <ul>

@@ -7,7 +7,7 @@
                             <div class="banner-content">
                                 <span>Your Financial Status Is Good Hands</span>
                                 <h1>Financial Assistance With True Purpose</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ipsum suspendisse ultrices gravida. Risus commodo </p>
+                                <p>We believe in you if you believe in your project. Together we can invest nation building projects and create wealth in a sustainable way. Lets move into the future with confidence.</p>
                                 <div class="banner-btn-area">
                                     <a class="common-btn two" href="./contact">
                                         Contact Us
@@ -26,7 +26,7 @@
                             <div class="banner-content">
                                 <span>Your Financial Status Is Good Hands</span>
                                 <h1>Finon Will Give Business Opportunity</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ipsum suspendisse ultrices gravida. Risus commodo </p>
+                                <p>We believe in you if you believe in your project. Together we can build projects and create wealth in a sustainable way. Lets move into the future with confidence.</p>
                                 <div class="banner-btn-area">
                                     <a class="common-btn two" href="./contact">
                                         Contact Us
@@ -51,12 +51,15 @@
                             <span class="sub-title">About Company</span>
                             <h2>We Help Our Clients To Achieve Their Desire Goals</h2>
                         </div>
-                        <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra </p>
+                        <p class="about-p">                            We are a very low interest rate funding organization for 
+                            businesses and non for profit organizations. 
+                            Our greatest motive is to provide funding or projects which plays a big role in the development of the society. 
+                            We stand as a big contrast to banks and other financial institutions which are only interested in making profits.</p>
                         <ul>
                             <li>
                                 <i class="flaticon-bar-chart"></i>
                                 <h3>Support On Raising Funds</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo </p>
+                                <p>We are a global player in business funding. We fund businesses on extremely low interest rates and very flexible payment terms. Our reason for existing is not driven by profits but my the need to create business growth and development</p>
                             </li>
                             <li>
                                 <i class="flaticon-consulting"></i>
@@ -375,23 +378,7 @@
     </div>
 
 
-    <div class="video-area">
-        <div class="d-table">
-            <div class="d-table-cell">
-                <div class="video-item">
-                    <div class="video-wrap">
-                        <a href="#" class="popup-youtube">
-                            <i class='bx bx-play'></i>
-                        </a>
-                    </div>
-                    <span>Watch Our Latest Video For Better Innovation</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="works-area-two ptb-100">
+    <!-- <div class="works-area-two ptb-100">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -432,25 +419,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="book-area pb-100">
-        <div class="container">
-            <div class="book-content">
-                <div class="book-shape">
-                    <img src="<?= $assets ?>/img/book-shape3.png" alt="Shape">
-                    <img src="<?= $assets ?>/img/book-shape4.png" alt="Shape">
-                </div>
-                <h2>Are You Ready? Book Appointment Now</h2>
-                <p>Get your Quote or Call <a href="tel:080569899563">(080) 569 899 563</a></p>
-                <a class="common-btn" href="#">
-                    Read More
-                    <span></span>
-                </a>
-            </div>
-        </div>
-    </div>
+    </div> -->
 
 
     <section class="testimonials-area-two ptb-100">
@@ -486,7 +455,7 @@
     </section>
 
 
-    <section class="blog-area two pt-100 pb-70">
+    <!-- <section class="blog-area two pt-100 pb-70">
         <div class="container">
             <div class="section-title two">
                 <span class="sub-title">Latest News</span>
@@ -570,4 +539,4 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->

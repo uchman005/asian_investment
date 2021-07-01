@@ -1,4 +1,4 @@
-<div class="logo-area ptb-100">
+<!-- <div class="logo-area ptb-100">
     <div class="container">
         <div class="logo-slider owl-theme owl-carousel">
             <div class="logo-item">
@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <footer class="footer-area two pt-100 pb-70">

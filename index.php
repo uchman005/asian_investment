@@ -10,7 +10,7 @@ $Route->add('/asian_investment/', function () {
     $Template = new Apps\Template;
     $Template->addheader("layouts.header");
     $Template->addfooter("layouts.footer");
-    $Template->assign("title","asian_investment Home");
+    $Template->assign("title","Home || Asian_investment");
 
     $Template->render("home");
 
@@ -22,7 +22,7 @@ $Route->add('/asian_investment/{page}', function ($page) {
     $Template = new Apps\Template;
     $Template->addheader("layouts.header");
     $Template->addfooter("layouts.footer");
-    $Template->assign("title",ucfirst($page). "Asian Investment");
+    $Template->assign("title", ucfirst($page). " || Asian Investment");
     $Template->assign("menukey", $page);
 
     $Template->render("pages.{$page}");
