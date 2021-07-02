@@ -19,60 +19,45 @@
 </div>
 
 
-<section class=" projects-area bg-white ptb-100 ">
-    <div class="container ">
-        <div class="row">
-            <div class="col-lg-1"></div>
-            <div class="col-lg-10">
-                <div class="row ">
-                    <div class="col-sm-6 col-lg-6 ">
-                        <div class="projects-item ">
-                            <img src="<?= $assets ?>/img/projects/projects2.jpg " alt="Projects ">
-                            <div class="inner ">
-                                <h3>
-                                    <a href="./project-details ">Financial Growth</a>
-                                </h3>
-                                <a class="projects-btn " href="# ">Finance</a>
-                            </div>
-                        </div>
+<div class="about-area-two pt-100 pb-70">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <div class="section-title two">
+
+                        <h2>Invest in your Company</h2>
                     </div>
-                    <div class="col-sm-6 col-lg-6 ">
-                        <div class="projects-item ">
-                            <img src="<?= $assets ?>/img/projects/projects3.jpg " alt="Projects ">
-                            <div class="inner ">
-                                <h3>
-                                    <a href="./project-details ">Fund Management</a>
-                                </h3>
-                                <a class="projects-btn " href="# ">Management</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-6 ">
-                        <div class="projects-item ">
-                            <img src="<?= $assets ?>/img/projects/projects5.jpg " alt="Projects ">
-                            <div class="inner ">
-                                <h3>
-                                    <a href="./project-details ">Financial Secure</a>
-                                </h3>
-                                <a class="projects-btn " href="# ">Financial</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-6 ">
-                        <div class="projects-item ">
-                            <img src="<?= $assets ?>/img/projects/projects6.jpg " alt="Projects ">
-                            <div class="inner ">
-                                <h3>
-                                    <a href="./project-details ">Guide & Support</a>
-                                </h3>
-                                <a class="projects-btn " href="# ">Support</a>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="about-p">
+                        While every one is free to apply for funding,
+                        more than 50% of the business projects we fund belongs to compapies.
+                        All the years we have helped hundreds of companies from all over the world meet up with challenges and take on new opportunities.
+                    </p>
+                    <p class="about-p">
+                        While our interest rates are much lower than that of banks,
+                        we expect companies to pay highter intrest rates than individuals and community based projects.
+                        For company projects to be funded they must pass the following tests
+                    </p>
+                    <ul style="list-style-type: disc;">
+                        <li><i class="bx bx-check"></i> All projects must be legal</li>
+                        <li><i class="bx bx-check"></i> Company must have a good financial record</li>
+                        <li><i class="bx bx-check"></i> Company must give us access to check their accounts at all times</li>
+                        <li><i class="bx bx-check"></i> Share Holders must be informed of the request for funds</li>
+                    </ul>
+                    <a class="common-btn two" href="./get-funding">
+                        Read More
+                        <span></span>
+                    </a>
                 </div>
             </div>
-            <div class="col-lg-1"></div>
-
+            <div class="col-lg-6">
+                <div class="about-img">
+                    <img src="<?= $assets ?>/img/about/about4.jpg" alt="About">
+                    <img src="<?= $assets ?>/img/about/about-shape6.png" alt="Shape">
+                    <img src="<?= $assets ?>/img/about/about-shape7.png" alt="Shape">
+                    <img src="<?= $assets ?>/img/about/about-shape8.png" alt="Shape">
+                </div>
+            </div>
         </div>
     </div>
-</section>
+</div>

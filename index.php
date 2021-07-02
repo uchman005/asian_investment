@@ -11,7 +11,7 @@ $Route->add('/asian_investment/', function () {
     $Template->addheader("layouts.header");
     $Template->addfooter("layouts.footer");
     $Template->assign("title", "Home || Asian_investment");
-
+    $Template->assign('menukey', '');
     $Template->render("home");
 }, 'GET');
 //Home page//

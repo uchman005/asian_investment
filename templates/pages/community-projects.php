@@ -19,60 +19,41 @@
 </div>
 
 
-<section class=" projects-area bg-white ptb-100 ">
-    <div class="container ">
-        <div class="row">
-            <div class="col-lg-1"></div>
-            <div class="col-lg-10">
-                <div class="row ">
-                    <div class="col-sm-6 col-lg-6 ">
-                        <div class="projects-item ">
-                            <img src="<?= $assets ?>/img/projects/projects2.jpg " alt="Projects ">
-                            <div class="inner ">
-                                <h3>
-                                    <a href="./project-details ">Financial Growth</a>
-                                </h3>
-                                <a class="projects-btn " href="# ">Finance</a>
-                            </div>
-                        </div>
+<div class="about-area-two pt-100 pb-70">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <div class="section-title two">
+
+                        <h2>Community Leaders</h2>
                     </div>
-                    <div class="col-sm-6 col-lg-6 ">
-                        <div class="projects-item ">
-                            <img src="<?= $assets ?>/img/projects/projects3.jpg " alt="Projects ">
-                            <div class="inner ">
-                                <h3>
-                                    <a href="./project-details ">Fund Management</a>
-                                </h3>
-                                <a class="projects-btn " href="# ">Management</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-6 ">
-                        <div class="projects-item ">
-                            <img src="<?= $assets ?>/img/projects/projects5.jpg " alt="Projects ">
-                            <div class="inner ">
-                                <h3>
-                                    <a href="./project-details ">Financial Secure</a>
-                                </h3>
-                                <a class="projects-btn " href="# ">Financial</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-6 ">
-                        <div class="projects-item ">
-                            <img src="<?= $assets ?>/img/projects/projects6.jpg " alt="Projects ">
-                            <div class="inner ">
-                                <h3>
-                                    <a href="./project-details ">Guide & Support</a>
-                                </h3>
-                                <a class="projects-btn " href="# ">Support</a>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="about-p">
+                        Much change comes from our communities.
+                        We sponsor community projects as long as the leaders are commited in seeing the project through all the stages of development.
+                        Community based projects must be participative and not run by some individuals without the participation of community members.
+                    </p>
+                    <p>Your Projects must pass the following tests</p>
+                    <ul>
+                        <li><i class="bx bx-check"></i> Must be legal</li>
+                        <li><i class="bx bx-check"></i> Be geared towards the improvement of the community</li>
+                        <li><i class="bx bx-check"></i> Must have a clear explanation of how the funding will be repaid</li>
+                        <li><i class="bx bx-check"></i> Selection of the leaders of the project must be democratic</li>
+                    </ul>
+                    <a class="common-btn two" href="./get-funding">
+                        Read More
+                        <span></span>
+                    </a>
                 </div>
             </div>
-            <div class="col-lg-1"></div>
-
+            <div class="col-lg-6">
+                <div class="about-img">
+                    <img src="<?= $assets ?>/img/about/about4.jpg" alt="About">
+                    <img src="<?= $assets ?>/img/about/about-shape6.png" alt="Shape">
+                    <img src="<?= $assets ?>/img/about/about-shape7.png" alt="Shape">
+                    <img src="<?= $assets ?>/img/about/about-shape8.png" alt="Shape">
+                </div>
+            </div>
         </div>
     </div>
-</section>
+</div>

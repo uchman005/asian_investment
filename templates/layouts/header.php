@@ -116,41 +116,6 @@
                             <li class="nav-item">
                                 <a href="./" class="nav-link<?= $menukey == '' ? ' active' : null ?>">Home</a>
                             </li>
-                            <!-- <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle">Pages <i class="bx bx-chevron-down"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link dropdown-toggle">Users </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="./loan" class="nav-link">Loan</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="apply.html" class="nav-link">Apply Now</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="testimonials.html" class="nav-link">Testimonials</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="team.html" class="nav-link">Team</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="faq.html" class="nav-link">FAQ</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="404.html" class="nav-link">404 Error Page</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="coming-soon.html" class="nav-link">Coming Soon</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="terms-conditions.html" class="nav-link">Terms & Conditions</a>
-                                    </li>
-                                </ul>
-                            </li> -->
                             <li class="nav-item">
                                 <a href="./about" class="nav-link<?= $menukey == 'about' ? ' active' : null ?>">About</a>
                             </li>
@@ -190,16 +155,8 @@
                         </ul>
                         <div class="side-nav">
                             <div class="language">
-                                <!-- <select>
-                                    <option>English</option>
-                                    <option>العربيّة</option>
-                                    <option>Deutsch</option>
-                                    <option>Português</option>
-                                </select> -->
                             </div>
-                            <a class="consultant-btn" href="./get-funding">
-                                Get Funding
-                            </a>
+                          <?= $menukey != 'get-funding'?  '<a class="consultant-btn" href="./get-funding">Get Funding</a>' : null?>
                         </div>
                     </div>
                 </nav>

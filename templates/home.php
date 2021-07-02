@@ -41,7 +41,6 @@
         </div>
     </div>
 
-
     <div class="about-area-two pt-100 pb-70">
         <div class="container">
             <div class="row align-items-center">
@@ -90,64 +89,7 @@
         </div>
     </div>
 
-
-    <section class="projects-area pt-100 pb-70">
-        <div class="container">
-            <div class="section-title two">
-                <span class="sub-title">Latest Projects</span>
-                <h2>We Have Completed Latest Projects</h2>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-lg-3">
-                    <div class="projects-item">
-                        <img src="<?= $assets ?>/img/projects/projects1.jpg" alt="Projects">
-                        <div class="inner">
-                            <h3>
-                                <a href="./project-details">Investment Trading</a>
-                            </h3>
-                            <a class="projects-btn" href="#">Trading</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="projects-item">
-                        <img src="<?= $assets ?>/img/projects/projects2.jpg" alt="Projects">
-                        <div class="inner">
-                            <h3>
-                                <a href="./project-details">Financial Growth</a>
-                            </h3>
-                            <a class="projects-btn" href="#">Finance</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="projects-item">
-                        <img src="<?= $assets ?>/img/projects/projects3.jpg" alt="Projects">
-                        <div class="inner">
-                            <h3>
-                                <a href="./project-details">Fund Management</a>
-                            </h3>
-                            <a class="projects-btn" href="#">Management</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="projects-item">
-                        <img src="<?= $assets ?>/img/projects/projects4.jpg" alt="Projects">
-                        <div class="inner">
-                            <h3>
-                                <a href="./project-details">Online Payment</a>
-                            </h3>
-                            <a class="projects-btn" href="#">Payment</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="services-area-two pt-100 pb-70">
+    <section id="services" class="services-area-two pt-100 pb-70">
         <div class="container">
             <div class="section-title two">
                 <span class="sub-title">Services</span>
@@ -164,12 +106,13 @@
                                 </div>
                                 <div class="bottom">
                                     <h3>
-                                        <a href="./service-details">Invest Planning</a>
+                                        <a href="./individual-projects">Individual Projects</a>
                                     </h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                                    <p> As long as you have a project which you believe will transform lives and our environment,
+                                        bring it to us if you are in need of funds to make your project see the light of day.</p>
                                     <div class="services-btn">
                                         <i class='bx bx-right-arrow-alt'></i>
-                                        <a href="./service-details">Read More</a>
+                                        <a href="./individual-projects">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -181,12 +124,13 @@
                                 </div>
                                 <div class="bottom">
                                     <h3>
-                                        <a href="./service-details">Financial Consultancy</a>
+                                        <a href="./company-projects">Company Projects</a>
                                     </h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                                    <p>While every one is free to apply for funding,
+                                        more than 50% of the business projects we fund belongs to compapies.
                                     <div class="services-btn">
                                         <i class='bx bx-right-arrow-alt'></i>
-                                        <a href="./service-details">Read More</a>
+                                        <a href="./company-projects">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -198,12 +142,12 @@
                                 </div>
                                 <div class="bottom">
                                     <h3>
-                                        <a href="./service-details">Travel Insurance</a>
+                                        <a href="./community-projects">Community Projects</a>
                                     </h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                                    <p>We sponsor community projects as long as the leaders are commited in seeing the project through all the stages of development.</p>
                                     <div class="services-btn">
                                         <i class='bx bx-right-arrow-alt'></i>
-                                        <a href="./service-details">Read More</a>
+                                        <a href="./community-projects">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -215,12 +159,14 @@
                                 </div>
                                 <div class="bottom">
                                     <h3>
-                                        <a href="./service-details">Business Advisor</a>
+                                        <a href="./non-profit">Non-Profit</a>
                                     </h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                                    <p>
+                                        You are free to submit your project proposal at all times and we are free to decide which projects we will sponsor.
+                                    </p>
                                     <div class="services-btn">
                                         <i class='bx bx-right-arrow-alt'></i>
-                                        <a href="./service-details">Read More</a>
+                                        <a href="./non-profit">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -228,78 +174,6 @@
                     </div>
                 </div>
                 <div class="col-lg-2"></div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="projects-area-two pt-100 pb-70">
-        <div class="container">
-            <div class="section-title two">
-                <span class="sub-title">Projects</span>
-                <h2>Our Completed Projects</h2>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-lg-3">
-                    <div class="projects-item-two">
-                        <img src="<?= $assets ?>/img/projects/project-shape1.png" alt="Shape">
-                        <img src="<?= $assets ?>/img/projects/project-shape2.png" alt="Shape">
-                        <i class="flaticon-goal icon"></i>
-                        <h3>
-                            <a href="./project-details">Fast Executions</a>
-                        </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor facilisis.</p>
-                        <a class="projects-btn" href="./project-details">
-                            Read More
-                            <i class='bx bx-right-arrow-alt'></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="projects-item-two">
-                        <img src="<?= $assets ?>/img/projects/project-shape1.png" alt="Shape">
-                        <img src="<?= $assets ?>/img/projects/project-shape2.png" alt="Shape">
-                        <i class="flaticon-support icon"></i>
-                        <h3>
-                            <a href="./project-details">Guide & Support</a>
-                        </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor facilisis.</p>
-                        <a class="projects-btn" href="./project-details">
-                            Read More
-                            <i class='bx bx-right-arrow-alt'></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="projects-item-two">
-                        <img src="<?= $assets ?>/img/projects/project-shape1.png" alt="Shape">
-                        <img src="<?= $assets ?>/img/projects/project-shape2.png" alt="Shape">
-                        <i class="flaticon-investment-insurance icon"></i>
-                        <h3>
-                            <a href="./project-details">Financial Secure</a>
-                        </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor facilisis.</p>
-                        <a class="projects-btn" href="./project-details">
-                            Read More
-                            <i class='bx bx-right-arrow-alt'></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="projects-item-two">
-                        <img src="<?= $assets ?>/img/projects/project-shape1.png" alt="Shape">
-                        <img src="<?= $assets ?>/img/projects/project-shape2.png" alt="Shape">
-                        <i class="flaticon-refinancing icon"></i>
-                        <h3>
-                            <a href="./project-details">Refinancing</a>
-                        </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor facilisis.</p>
-                        <a class="projects-btn" href="./project-details">
-                            Read More
-                            <i class='bx bx-right-arrow-alt'></i>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -355,50 +229,6 @@
     </div>
 
 
-    <!-- <div class="works-area-two ptb-100">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="works-img">
-                        <img src="<?= $assets ?>/img/works-shape1.png" alt="Shape">
-                        <img src="<?= $assets ?>/img/works-main.png" alt="Works">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="works-content">
-                        <div class="section-title two">
-                            <span class="sub-title">Working Process</span>
-                            <h2>How Does It Works</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt labore dolore magna aliqua.</p>
-                        </div>
-                        <ul>
-                            <li>
-                                <i class='bx bx-check'></i>
-                                <h3>Select Account & Terms</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </li>
-                            <li>
-                                <i class='bx bx-check'></i>
-                                <h3>Inform Your Personal Information</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </li>
-                            <li>
-                                <i class='bx bx-check'></i>
-                                <h3>Get Improved In 24 Hours</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </li>
-                        </ul>
-                        <a class="common-btn two" href="#">
-                            Learn More
-                            <span></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-
     <section class="testimonials-area-two ptb-100">
         <div class="container">
             <div class="section-title two">
@@ -430,90 +260,3 @@
             </div>
         </div>
     </section>
-
-
-    <!-- <section class="blog-area two pt-100 pb-70">
-        <div class="container">
-            <div class="section-title two">
-                <span class="sub-title">Latest News</span>
-                <h2>Latest News From Blog</h2>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-lg-4">
-                    <div class="blog-item">
-                        <div class="top">
-                            <img src="<?= $assets ?>/img/blog/blog1.jpg" alt="Blog">
-                        </div>
-                        <div class="bottom">
-                            <ul>
-                                <li>
-                                    <i class='bx bx-user'></i>
-                                    by
-                                    <a href="#">Admin</a>
-                                </li>
-                                <li>
-                                    <i class='bx bx-calendar'></i>
-                                    27 November, 2020
-                                </li>
-                            </ul>
-                            <h3>
-                                <a href="./blog-details">Financial planning is the best invest for corporate business</a>
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
-                            <a class="blog-btn" href="./blog-details">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="blog-item">
-                        <div class="top">
-                            <img src="<?= $assets ?>/img/blog/blog2.jpg" alt="Blog">
-                        </div>
-                        <div class="bottom">
-                            <ul>
-                                <li>
-                                    <i class='bx bx-user'></i>
-                                    by
-                                    <a href="#">Admin</a>
-                                </li>
-                                <li>
-                                    <i class='bx bx-calendar'></i>
-                                    28 November, 2020
-                                </li>
-                            </ul>
-                            <h3>
-                                <a href="./blog-details">Largest demand partnership building with agency</a>
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
-                            <a class="blog-btn" href="./blog-details">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
-                    <div class="blog-item">
-                        <div class="top">
-                            <img src="<?= $assets ?>/img/blog/blog3.jpg" alt="Blog">
-                        </div>
-                        <div class="bottom">
-                            <ul>
-                                <li>
-                                    <i class='bx bx-user'></i>
-                                    by
-                                    <a href="#">Admin</a>
-                                </li>
-                                <li>
-                                    <i class='bx bx-calendar'></i>
-                                    29 November, 2020
-                                </li>
-                            </ul>
-                            <h3>
-                                <a href="./blog-details">How to become top conference for business growth</a>
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
-                            <a class="blog-btn" href="./blog-details">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->

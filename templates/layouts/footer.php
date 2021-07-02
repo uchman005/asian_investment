@@ -63,16 +63,10 @@
                                 <a href="./about">About</a>
                             </li>
                             <li>
-                                <a href="./services">Services</a>
+                                <a href="#services">Services</a>
                             </li>
                             <li>
-                                <a href="./projects">Projects</a>
-                            </li>
-                            <li>
-                                <a href="./faq">FAQ</a>
-                            </li>
-                            <li>
-                                <a href="./privacy-policy">Privacy Policy</a>
+                                <a href="#services">Projects</a>
                             </li>
                         </ul>
                     </div>
@@ -83,9 +77,9 @@
                     <h3>Newsletter</h3>
                     <div class="footer-newsletter">
                         <p>
-                       Subscribe to get Weekly updates 
+                            Stay in the loop
                         </p>
-                        <form class="newsletter-form" data-toggle="validator">
+                        <form class="newsletter-form" data-toggle="validator" action="mailto:#">
                             <input type="email" class="form-control" placeholder="Enter email address" name="EMAIL" required="" autocomplete="off">
                             <button class="btn common-btn" type="submit">
                                 Subscribe
@@ -105,16 +99,13 @@
                                 <a href="./about">Financial Advice</a>
                             </li>
                             <li>
-                                <a href="./services">Planning Strategies</a>
+                                <a href="#services">Planning Strategies</a>
                             </li>
                             <li>
-                                <a href="./projects">Investment Trending</a>
+                                <a href="./non-profit">Non profit</a>
                             </li>
                             <li>
-                                <a href="./faq">Wealth Commitment</a>
-                            </li>
-                            <li>
-                                <a href="./privacy-policy">States Element</a>
+                                <a href="javascript:void;">States Element</a>
                             </li>
                         </ul>
                     </div>
