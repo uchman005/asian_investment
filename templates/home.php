@@ -49,22 +49,27 @@
                     <div class="about-content">
                         <div class="section-title two">
                             <span class="sub-title">About Company</span>
-                            <h2>We Help Our Clients To Achieve Their Desire Goals</h2>
+                            <h2>We Help Our Clients To Achieve Their Desired Goals</h2>
                         </div>
-                        <p class="about-p">                            We are a very low interest rate funding organization for 
-                            businesses and non for profit organizations. 
-                            Our greatest motive is to provide funding or projects which plays a big role in the development of the society. 
+                        <p class="about-p"> We are a very low interest rate funding organization for
+                            businesses and non for profit organizations.
+                            Our greatest motive is to provide funding or projects which plays a big role in the development of the society.
                             We stand as a big contrast to banks and other financial institutions which are only interested in making profits.</p>
                         <ul>
                             <li>
                                 <i class="flaticon-bar-chart"></i>
                                 <h3>Support On Raising Funds</h3>
-                                <p>We are a global player in business funding. We fund businesses on extremely low interest rates and very flexible payment terms. Our reason for existing is not driven by profits but my the need to create business growth and development</p>
+                                <p>
+                                    We are a global player in business funding.
+                                    We fund businesses on extremely low interest rates and very flexible payment terms.
+                                </p>
                             </li>
                             <li>
                                 <i class="flaticon-consulting"></i>
-                                <h3>Outsourced Consult Business</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo </p>
+                                <h3>Let all your dreams Come True</h3>
+                                <p>
+                                    Our reason for existing is not driven by profits but my the need to create business growth and development.
+                                </p>
                             </li>
                         </ul>
                         <a class="common-btn two" href="./about">
@@ -149,108 +154,80 @@
                 <h2>Exceptional Finon Services</h2>
             </div>
             <div class="row">
-                <div class="col-sm-6 col-lg-4">
-                    <div class="services-item-two">
-                        <div class="top">
-                            <img src="<?= $assets ?>/img/services/services1.jpg" alt="Services">
+                <div class="col-lg-2"></div>
+                <div class="col-sm-12 col-lg-8">
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-6">
+                            <div class="services-item-two">
+                                <div class="top">
+                                    <img src="<?= $assets ?>/img/services/services1.jpg" alt="Services">
+                                </div>
+                                <div class="bottom">
+                                    <h3>
+                                        <a href="./service-details">Invest Planning</a>
+                                    </h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                                    <div class="services-btn">
+                                        <i class='bx bx-right-arrow-alt'></i>
+                                        <a href="./service-details">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="bottom">
-                            <h3>
-                                <a href="./service-details">Invest Planning</a>
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
-                            <div class="services-btn">
-                                <i class='bx bx-right-arrow-alt'></i>
-                                <a href="./service-details">Read More</a>
+                        <div class="col-sm-6 col-lg-6">
+                            <div class="services-item-two">
+                                <div class="top">
+                                    <img src="<?= $assets ?>/img/services/services2.jpg" alt="Services">
+                                </div>
+                                <div class="bottom">
+                                    <h3>
+                                        <a href="./service-details">Financial Consultancy</a>
+                                    </h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                                    <div class="services-btn">
+                                        <i class='bx bx-right-arrow-alt'></i>
+                                        <a href="./service-details">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-6">
+                            <div class="services-item-two">
+                                <div class="top">
+                                    <img src="<?= $assets ?>/img/services/services4.jpg" alt="Services">
+                                </div>
+                                <div class="bottom">
+                                    <h3>
+                                        <a href="./service-details">Travel Insurance</a>
+                                    </h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                                    <div class="services-btn">
+                                        <i class='bx bx-right-arrow-alt'></i>
+                                        <a href="./service-details">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-6">
+                            <div class="services-item-two">
+                                <div class="top">
+                                    <img src="<?= $assets ?>/img/services/services5.jpg" alt="Services">
+                                </div>
+                                <div class="bottom">
+                                    <h3>
+                                        <a href="./service-details">Business Advisor</a>
+                                    </h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                                    <div class="services-btn">
+                                        <i class='bx bx-right-arrow-alt'></i>
+                                        <a href="./service-details">Read More</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="services-item-two">
-                        <div class="top">
-                            <img src="<?= $assets ?>/img/services/services2.jpg" alt="Services">
-                        </div>
-                        <div class="bottom">
-                            <h3>
-                                <a href="./service-details">Financial Consultancy</a>
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
-                            <div class="services-btn">
-                                <i class='bx bx-right-arrow-alt'></i>
-                                <a href="./service-details">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="services-item-two">
-                        <div class="top">
-                            <img src="<?= $assets ?>/img/services/services3.jpg" alt="Services">
-                        </div>
-                        <div class="bottom">
-                            <h3>
-                                <a href="./service-details">Online Banking & Loans</a>
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
-                            <div class="services-btn">
-                                <i class='bx bx-right-arrow-alt'></i>
-                                <a href="./service-details">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="services-item-two">
-                        <div class="top">
-                            <img src="<?= $assets ?>/img/services/services4.jpg" alt="Services">
-                        </div>
-                        <div class="bottom">
-                            <h3>
-                                <a href="./service-details">Travel Insurance</a>
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
-                            <div class="services-btn">
-                                <i class='bx bx-right-arrow-alt'></i>
-                                <a href="./service-details">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="services-item-two">
-                        <div class="top">
-                            <img src="<?= $assets ?>/img/services/services5.jpg" alt="Services">
-                        </div>
-                        <div class="bottom">
-                            <h3>
-                                <a href="./service-details">Business Advisor</a>
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
-                            <div class="services-btn">
-                                <i class='bx bx-right-arrow-alt'></i>
-                                <a href="./service-details">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="services-item-two">
-                        <div class="top">
-                            <img src="<?= $assets ?>/img/services/services6.jpg" alt="Services">
-                        </div>
-                        <div class="bottom">
-                            <h3>
-                                <a href="./service-details">Education Support</a>
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
-                            <div class="services-btn">
-                                <i class='bx bx-right-arrow-alt'></i>
-                                <a href="./service-details">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="col-lg-2"></div>
             </div>
         </div>
     </section>
@@ -430,23 +407,23 @@
             </div>
             <div class="testimonials-slider owl-theme owl-carousel">
                 <div class="testimonials-item">
-                    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </h2>
+                    <h2>Finon funded our water project. My community is forever thankful to Finon. The interest rate of the loan is not only very low, the repayment duration is long giving us more time to invest some of the profits into the water project. I will always recommend Finon</h2>
                     <img src="<?= $assets ?>/img/testimonials-thumb1.jpg" alt="Testimonials">
-                    <h3>Aliza Trupa</h3>
+                    <h3>Halizah Trupa</h3>
                     <span>CEO of Finance & Banking</span>
                     <i class='bx bxs-quote-alt-left bx-flip-horizontal'></i>
                 </div>
                 <div class="testimonials-item">
-                    <h2>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</h2>
+                    <h2>Everything was going so well. But when the corona virus came with all the lockdowns we were almost out of business. Finon has given us a loan which we now use to pay part of our workers salary so as to keep them from moving to other companies during lock downs.</h2>
                     <img src="<?= $assets ?>/img/testimonials-thumb2.jpg" alt="Testimonials">
-                    <h3>Tom Henry</h3>
+                    <h3>Mohalled Sillah</h3>
                     <span>Director</span>
                     <i class='bx bxs-quote-alt-left bx-flip-horizontal'></i>
                 </div>
                 <div class="testimonials-item">
-                    <h2>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing</h2>
+                    <h2>We were finding very difficult to keep our prices same with market prices due to lack of funds. Our production cost was too high. Thanks to low interest loan from Finon, we were able to invest in new machinery. Now we are to compete with confidence. Without Finon, we will be out of business. I will never stop thanking you.</h2>
                     <img src="<?= $assets ?>/img/testimonials-thumb3.jpg" alt="Testimonials">
-                    <h3>Micheal Shon</h3>
+                    <h3>Huen Cheng</h3>
                     <span>Manager</span>
                     <i class='bx bxs-quote-alt-left bx-flip-horizontal'></i>
                 </div>

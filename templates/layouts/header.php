@@ -157,18 +157,21 @@
                             <li class="nav-item">
                             </li>
                             <li class="nav-item">
-                                <a href="./projects" class="nav-link<?= $menukey == 'projects' ? ' active' : null ?>">Projects</a>
-                                <!-- <ul class="dropdown-menu">
+                                <a href="javascript:void;" class="nav-link<?= $menukey == 'community-projects' || $menukey == 'individual-projects' || $menukey == 'non-profit' || $menukey == 'company-projects' ? ' active' : null ?>">Projects <i class="bx bx-chevron-down"></i></a>
+                                <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="projects.html" class="nav-link">Projects Style One</a>
+                                        <a href="./individual-projects" class="nav-link">Individual Projects</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="projects-2.html" class="nav-link">Projects Style Two</a>
+                                        <a href="./community-projects" class="nav-link">Community Projects</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="project-details.html" class="nav-link">Project Details</a>
+                                        <a href="./non-profit" class="nav-link">Non-profit</a>
                                     </li>
-                                </ul> -->
+                                    <li class="nav-item">
+                                        <a href="./company-projects" class="nav-link">Company Projects</a>
+                                    </li>
+                                </ul>
                             </li>
                             <!-- <li class="nav-item">
                                 <a href="#" class="nav-link dropdown-toggle">Blog <i class="bx bx-chevron-down"></i></a>
@@ -194,7 +197,7 @@
                                     <option>Português</option>
                                 </select> -->
                             </div>
-                            <a class="consultant-btn" href="#">
+                            <a class="consultant-btn" href="./get-funding">
                                 Get Funding
                             </a>
                         </div>

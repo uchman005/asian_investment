@@ -27,10 +27,13 @@
             <div class="col-sm-6 col-lg-4">
                 <div class="footer-item">
                     <div class="footer-logo">
-                        <a class="logo" href="index.html">
+                        <a class="logo" href="./">
                             <img src="<?= $assets ?>/img/logo-four.png" alt="Logo">
                         </a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices </p>
+                        <p>
+                            We are a global player in business funding.
+                            We fund businesses on extremely low interest rates and very flexible payment terms.
+                        </p>
                         <ul>
                             <li>
                                 <i class='bx bx-phone-call'></i>
@@ -40,7 +43,7 @@
                             <li>
                                 <i class='bx bx-mail-send'></i>
                                 <span>Email:</span>
-                                <a href="/cdn-cgi/l/email-protection#3d55585151527d5b54535253135e5250"><span class="__cf_email__" data-cfemail="cca4a9a0a0a38caaa5a2a3a2e2afa3a1">[email&#160;protected]</span></a>
+                                <a href="#"><span class="__cf_email__" data-cfemail="cca4a9a0a0a38caaa5a2a3a2e2afa3a1">[email&#160;protected]</span></a>
                             </li>
                             <li>
                                 <i class='bx bx-current-location'></i>
@@ -57,22 +60,19 @@
                         <h3>Quick Links</h3>
                         <ul>
                             <li>
-                                <a href="about.html">About</a>
+                                <a href="./about">About</a>
                             </li>
                             <li>
-                                <a href="services.html">Services</a>
+                                <a href="./services">Services</a>
                             </li>
                             <li>
-                                <a href="projects.html">Projects</a>
+                                <a href="./projects">Projects</a>
                             </li>
                             <li>
-                                <a href="faq.html">FAQ</a>
+                                <a href="./faq">FAQ</a>
                             </li>
                             <li>
-                                <a href="blog.html">Blog</a>
-                            </li>
-                            <li>
-                                <a href="privacy-policy.html">Privacy Policy</a>
+                                <a href="./privacy-policy">Privacy Policy</a>
                             </li>
                         </ul>
                     </div>
@@ -82,7 +82,9 @@
                 <div class="footer-item">
                     <h3>Newsletter</h3>
                     <div class="footer-newsletter">
-                        <p>Accusamus et iusto odio quas molestias except.</p>
+                        <p>
+                       Subscribe to get Weekly updates 
+                        </p>
                         <form class="newsletter-form" data-toggle="validator">
                             <input type="email" class="form-control" placeholder="Enter email address" name="EMAIL" required="" autocomplete="off">
                             <button class="btn common-btn" type="submit">
@@ -100,22 +102,19 @@
                         <h3>What We Do</h3>
                         <ul>
                             <li>
-                                <a href="about.html">Financial Advice</a>
+                                <a href="./about">Financial Advice</a>
                             </li>
                             <li>
-                                <a href="services.html">Planning Strategies</a>
+                                <a href="./services">Planning Strategies</a>
                             </li>
                             <li>
-                                <a href="projects.html">Investment Trending</a>
+                                <a href="./projects">Investment Trending</a>
                             </li>
                             <li>
-                                <a href="faq.html">Wealth Commitment</a>
+                                <a href="./faq">Wealth Commitment</a>
                             </li>
                             <li>
-                                <a href="blog.html">Our Services</a>
-                            </li>
-                            <li>
-                                <a href="privacy-policy.html">States Element</a>
+                                <a href="./privacy-policy">States Element</a>
                             </li>
                         </ul>
                     </div>
@@ -129,7 +128,7 @@
 <div class="copyright-area two">
     <div class="container">
         <div class="copyright-item">
-            <p>Copyright ©2021 Finon. Designed By <a href="../../index.htm" target="_blank">EnvyTheme</a></p>
+            <p>Copyright ©2021 Finon.</p>
         </div>
     </div>
 </div>
@@ -145,26 +144,16 @@
 <script src="<?= $assets ?>/js/jquery-3.5.1.min.js"></script>
 <script src="<?= $assets ?>/js/popper.min.js"></script>
 <script src="<?= $assets ?>/js/bootstrap.min.js"></script>
-
 <script src="<?= $assets ?>/js/form-validator.min.js"></script>
-
 <script src="<?= $assets ?>/js/contact-form-script.js"></script>
-
 <script src="<?= $assets ?>/js/jquery.ajaxchimp.min.js"></script>
-
 <script src="<?= $assets ?>/js/jquery.meanmenu.js"></script>
-
 <script src="<?= $assets ?>/js/owl.carousel.min.js"></script>
-
 <script src="<?= $assets ?>/js/wow.min.js"></script>
-
 <script src="<?= $assets ?>/js/odometer.min.js"></script>
 <script src="<?= $assets ?>/js/jquery.appear.min.js"></script>
-
 <script src="<?= $assets ?>/js/jquery.nice-select.min.js"></script>
-
 <script src="<?= $assets ?>/js/jquery.magnific-popup.min.js"></script>
-
 <script src="<?= $assets ?>/js/custom.js"></script>
 </body>
 

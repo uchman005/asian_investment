@@ -59,10 +59,10 @@
                         <div class="form-group">
                             <label>Gender:</label>
                             <select>
-    <option>Male</option>
-    <option>Female</option>
-    <option>Other</option>
-    </select>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-6">
@@ -111,17 +111,17 @@
                         <div class="form-group">
                             <label>Choose...</label>
                             <select>
-    <option>Business Loan</option>
-    <option>Agriculture Loan</option>
-    <option>Education Loan</option>
-    </select>
+                                <option>Business Loan</option>
+                                <option>Agriculture Loan</option>
+                                <option>Education Loan</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <button type="submit" class="btn common-btn">
-    Apply Now
-    <span></span>
-    </button>
+                            Apply Now
+                            <span></span>
+                        </button>
                     </div>
                 </div>
             </form>
