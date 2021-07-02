@@ -264,7 +264,3 @@ class Session {
   }
   
 }
-
-
-
-?>

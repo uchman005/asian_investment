@@ -12,7 +12,4 @@ class Core extends Model
 	{
 		parent::__construct();
 	}
-
-
-	
 }

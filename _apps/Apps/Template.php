@@ -215,9 +215,9 @@ class Template extends Session
 	{
 		$toast = array();
 		$_route = $_SERVER['REQUEST_URI'];
-		if (isset($this->data['errors'])){
+		if (isset($this->data['errors'])) {
 			$getError = $this->data['errors'];
-			if(count($getError)){
+			if (count($getError)) {
 				$_toast = $this->storage("errors");
 				$route = $_toast['route'];
 				if ($route == $_route) {
@@ -666,7 +666,7 @@ class Template extends Session
 		$header_files = "";
 		$robots = $this->robots;
 		$footer_files = "";
-		
+
 		$Core = $this->Core;
 
 		//Load Config variables//

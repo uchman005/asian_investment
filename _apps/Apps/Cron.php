@@ -9,11 +9,11 @@ class Cron
 	public $_tor = NULL;
 	public $_exeurl = NULL;
 	public $variables = array();
-    
+
 
 	public function __construct($url)
 	{
-        $this->_exeurl = $url;
+		$this->_exeurl = $url;
 	}
 
 	/**
@@ -24,25 +24,15 @@ class Cron
 	public function __set($key, $val)
 	{
 		$this->variables[$key] = $val;
-    }
-    
-    /**
-     * @param mixed $key 
-     * @param mixed $val 
-     * @return void 
-     */
-    public function __get($key)
+	}
+
+	/**
+	 * @param mixed $key 
+	 * @param mixed $val 
+	 * @return void 
+	 */
+	public function __get($key)
 	{
-       return  $this->variables[$key];
-    }
-    
-
-
-
-
-	
-
-    
-
-	
+		return  $this->variables[$key];
+	}
 }

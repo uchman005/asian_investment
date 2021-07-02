@@ -24,75 +24,77 @@
 */
 
 /**
-* PHPMailer - PHP SMTP email transport class
-* NOTE: Designed for use with PHP version 5 and up
-* @package PHPMailer
-* @author Andy Prevost
-* @author Marcus Bointon
-* @copyright 2004 - 2008 Andy Prevost
-* @author Jim Jagielski
-* @copyright 2010 - 2012 Jim Jagielski
-* @license http://www.gnu.org/copyleft/lesser.html Distributed under the Lesser General Public License (LGPL)
-*/
+ * PHPMailer - PHP SMTP email transport class
+ * NOTE: Designed for use with PHP version 5 and up
+ * @package PHPMailer
+ * @author Andy Prevost
+ * @author Marcus Bointon
+ * @copyright 2004 - 2008 Andy Prevost
+ * @author Jim Jagielski
+ * @copyright 2010 - 2012 Jim Jagielski
+ * @license http://www.gnu.org/copyleft/lesser.html Distributed under the Lesser General Public License (LGPL)
+ */
 
 /**
-* PHP RFC821 SMTP client
-*
-* Implements all the RFC 821 SMTP commands except TURN which will always return a not implemented error.
-* SMTP also provides some utility methods for sending mail to an SMTP server.
-* @author Chris Ryan
-* @package PHPMailer
-*/
+ * PHP RFC821 SMTP client
+ *
+ * Implements all the RFC 821 SMTP commands except TURN which will always return a not implemented error.
+ * SMTP also provides some utility methods for sending mail to an SMTP server.
+ * @author Chris Ryan
+ * @package PHPMailer
+ */
+
 namespace Apps;
 
-class SMTP{
+class SMTP
+{
   /**
-* SMTP server port
-* @var int
-*/
+   * SMTP server port
+   * @var int
+   */
   public $SMTP_PORT = 25;
 
   /**
-* SMTP reply line ending (don't change)
-* @var string
-*/
+   * SMTP reply line ending (don't change)
+   * @var string
+   */
   public $CRLF = "\r\n";
 
   /**
-* Debug output level; 0 for no output
-* @var int
-*/
+   * Debug output level; 0 for no output
+   * @var int
+   */
   public $do_debug = 0;
 
   /**
-* Sets the function/method to use for debugging output.
-* Right now we only honor 'echo' or 'error_log'
-* @var string
-*/
+   * Sets the function/method to use for debugging output.
+   * Right now we only honor 'echo' or 'error_log'
+   * @var string
+   */
   public $Debugoutput = 'echo';
 
   /**
-* Sets VERP use on/off (default is off)
-* @var bool
-*/
+   * Sets VERP use on/off (default is off)
+   * @var bool
+   */
   public $do_verp = false;
 
   /**
-* Sets the SMTP timeout value for reads, in seconds
-* @var int
-*/
+   * Sets the SMTP timeout value for reads, in seconds
+   * @var int
+   */
   public $Timeout = 15;
 
   /**
-* Sets the SMTP timelimit value for reads, in seconds
-* @var int
-*/
+   * Sets the SMTP timelimit value for reads, in seconds
+   * @var int
+   */
   public $Timelimit = 30;
 
   /**
-* Sets the SMTP PHPMailer Version number
-* @var string
-*/
+   * Sets the SMTP PHPMailer Version number
+   * @var string
+   */
   public $Version = '5.2.6';
 
   /////////////////////////////////////////////////
@@ -100,36 +102,38 @@ class SMTP{
   /////////////////////////////////////////////////
 
   /**
-* @var resource The socket to the server
-*/
+   * @var resource The socket to the server
+   */
   private $smtp_conn;
   /**
-* @var string Error message, if any, for the last call
-*/
+   * @var string Error message, if any, for the last call
+   */
   private $error;
   /**
-* @var string The reply the server sent to us for HELO
-*/
+   * @var string The reply the server sent to us for HELO
+   */
   private $helo_rply;
 
   /**
-* Outputs debugging info via user-defined method
-* @param string $str
-*/
-  private function edebug($str) {
+   * Outputs debugging info via user-defined method
+   * @param string $str
+   */
+  private function edebug($str)
+  {
     if ($this->Debugoutput == 'error_log') {
-        error_log($str);
+      error_log($str);
     } else {
-        echo $str;
+      echo $str;
     }
   }
 
   /**
-* Initialize the class so that the data is in a known state.
-* @access public
-* @return SMTP
-*/
-  public function __construct() {
+   * Initialize the class so that the data is in a known state.
+   * @access public
+   * @return SMTP
+   */
+  public function __construct()
+  {
     $this->smtp_conn = 0;
     $this->error = null;
     $this->helo_rply = null;
@@ -142,48 +146,53 @@ class SMTP{
   /////////////////////////////////////////////////
 
   /**
-* Connect to the server specified on the port specified.
-* If the port is not specified use the default SMTP_PORT.
-* If tval is specified then a connection will try and be
-* established with the server for that number of seconds.
-* If tval is not specified the default is 30 seconds to
-* try on the connection.
-*
-* SMTP CODE SUCCESS: 220
-* SMTP CODE FAILURE: 421
-* @access public
-* @param string $host
-* @param int $port
-* @param int $tval
-* @return bool
-*/
-  public function Connect($host, $port = 0, $tval = 30) {
+   * Connect to the server specified on the port specified.
+   * If the port is not specified use the default SMTP_PORT.
+   * If tval is specified then a connection will try and be
+   * established with the server for that number of seconds.
+   * If tval is not specified the default is 30 seconds to
+   * try on the connection.
+   *
+   * SMTP CODE SUCCESS: 220
+   * SMTP CODE FAILURE: 421
+   * @access public
+   * @param string $host
+   * @param int $port
+   * @param int $tval
+   * @return bool
+   */
+  public function Connect($host, $port = 0, $tval = 30)
+  {
     // set the error val to null so there is no confusion
     $this->error = null;
 
     // make sure we are __not__ connected
-    if($this->connected()) {
+    if ($this->connected()) {
       // already connected, generate error
       $this->error = array('error' => 'Already connected to a server');
       return false;
     }
 
-    if(empty($port)) {
+    if (empty($port)) {
       $port = $this->SMTP_PORT;
     }
 
     // connect to the smtp server
-    $this->smtp_conn = @fsockopen($host, // the host of the server
-                                 $port, // the port to use
-                                 $errno, // error number if any
-                                 $errstr, // error message if any
-                                 $tval); // give up after ? secs
+    $this->smtp_conn = @fsockopen(
+      $host, // the host of the server
+      $port, // the port to use
+      $errno, // error number if any
+      $errstr, // error message if any
+      $tval
+    ); // give up after ? secs
     // verify we connected properly
-    if(empty($this->smtp_conn)) {
-      $this->error = array('error' => 'Failed to connect to server',
-                           'errno' => $errno,
-                           'errstr' => $errstr);
-      if($this->do_debug >= 1) {
+    if (empty($this->smtp_conn)) {
+      $this->error = array(
+        'error' => 'Failed to connect to server',
+        'errno' => $errno,
+        'errstr' => $errstr
+      );
+      if ($this->do_debug >= 1) {
         $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ": $errstr ($errno)" . $this->CRLF . '<br />');
       }
       return false;
@@ -191,18 +200,18 @@ class SMTP{
 
     // SMTP server can take longer to respond, give longer timeout for first read
     // Windows does not have support for this timeout function
-    if(substr(PHP_OS, 0, 3) != 'WIN') {
-     $max = ini_get('max_execution_time');
-     if ($max != 0 && $tval > $max) { // don't bother if unlimited
-      @set_time_limit($tval);
-     }
-     stream_set_timeout($this->smtp_conn, $tval, 0);
+    if (substr(PHP_OS, 0, 3) != 'WIN') {
+      $max = ini_get('max_execution_time');
+      if ($max != 0 && $tval > $max) { // don't bother if unlimited
+        @set_time_limit($tval);
+      }
+      stream_set_timeout($this->smtp_conn, $tval, 0);
     }
 
     // get any announcement
     $announce = $this->get_lines();
 
-    if($this->do_debug >= 2) {
+    if ($this->do_debug >= 2) {
       $this->edebug('SMTP -> FROM SERVER:' . $announce . $this->CRLF . '<br />');
     }
 
@@ -210,18 +219,19 @@ class SMTP{
   }
 
   /**
-* Initiate a TLS communication with the server.
-*
-* SMTP CODE 220 Ready to start TLS
-* SMTP CODE 501 Syntax error (no parameters allowed)
-* SMTP CODE 454 TLS not available due to temporary reason
-* @access public
-* @return bool success
-*/
-  public function StartTLS() {
+   * Initiate a TLS communication with the server.
+   *
+   * SMTP CODE 220 Ready to start TLS
+   * SMTP CODE 501 Syntax error (no parameters allowed)
+   * SMTP CODE 454 TLS not available due to temporary reason
+   * @access public
+   * @return bool success
+   */
+  public function StartTLS()
+  {
     $this->error = null; # to avoid confusion
 
-    if(!$this->connected()) {
+    if (!$this->connected()) {
       $this->error = array('error' => 'Called StartTLS() without being connected');
       return false;
     }
@@ -231,23 +241,25 @@ class SMTP{
     $rply = $this->get_lines();
     $code = substr($rply, 0, 3);
 
-    if($this->do_debug >= 2) {
+    if ($this->do_debug >= 2) {
       $this->edebug('SMTP -> FROM SERVER:' . $rply . $this->CRLF . '<br />');
     }
 
-    if($code != 220) {
+    if ($code != 220) {
       $this->error =
-         array('error' => 'STARTTLS not accepted from server',
-               'smtp_code' => $code,
-               'smtp_msg' => substr($rply, 4));
-      if($this->do_debug >= 1) {
+        array(
+          'error' => 'STARTTLS not accepted from server',
+          'smtp_code' => $code,
+          'smtp_msg' => substr($rply, 4)
+        );
+      if ($this->do_debug >= 1) {
         $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF . '<br />');
       }
       return false;
     }
 
     // Begin encrypted connection
-    if(!stream_socket_enable_crypto($this->smtp_conn, true, STREAM_CRYPTO_METHOD_TLS_CLIENT)) {
+    if (!stream_socket_enable_crypto($this->smtp_conn, true, STREAM_CRYPTO_METHOD_TLS_CLIENT)) {
       return false;
     }
 
@@ -255,17 +267,18 @@ class SMTP{
   }
 
   /**
-* Performs SMTP authentication. Must be run after running the
-* Hello() method. Returns true if successfully authenticated.
-* @access public
-* @param string $username
-* @param string $password
-* @param string $authtype
-* @param string $realm
-* @param string $workstation
-* @return bool
-*/
-  public function Authenticate($username, $password, $authtype='LOGIN', $realm='', $workstation='') {
+   * Performs SMTP authentication. Must be run after running the
+   * Hello() method. Returns true if successfully authenticated.
+   * @access public
+   * @param string $username
+   * @param string $password
+   * @param string $authtype
+   * @param string $realm
+   * @param string $workstation
+   * @return bool
+   */
+  public function Authenticate($username, $password, $authtype = 'LOGIN', $realm = '', $workstation = '')
+  {
     if (empty($authtype)) {
       $authtype = 'LOGIN';
     }
@@ -278,28 +291,32 @@ class SMTP{
         $rply = $this->get_lines();
         $code = substr($rply, 0, 3);
 
-        if($code != 334) {
+        if ($code != 334) {
           $this->error =
-            array('error' => 'AUTH not accepted from server',
-                  'smtp_code' => $code,
-                  'smtp_msg' => substr($rply, 4));
-          if($this->do_debug >= 1) {
+            array(
+              'error' => 'AUTH not accepted from server',
+              'smtp_code' => $code,
+              'smtp_msg' => substr($rply, 4)
+            );
+          if ($this->do_debug >= 1) {
             $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF . '<br />');
           }
           return false;
         }
         // Send encoded username and password
-          $this->client_send(base64_encode("\0".$username."\0".$password) . $this->CRLF);
+        $this->client_send(base64_encode("\0" . $username . "\0" . $password) . $this->CRLF);
 
         $rply = $this->get_lines();
         $code = substr($rply, 0, 3);
 
-        if($code != 235) {
+        if ($code != 235) {
           $this->error =
-            array('error' => 'Authentication not accepted from server',
-                  'smtp_code' => $code,
-                  'smtp_msg' => substr($rply, 4));
-          if($this->do_debug >= 1) {
+            array(
+              'error' => 'Authentication not accepted from server',
+              'smtp_code' => $code,
+              'smtp_msg' => substr($rply, 4)
+            );
+          if ($this->do_debug >= 1) {
             $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF . '<br />');
           }
           return false;
@@ -312,12 +329,14 @@ class SMTP{
         $rply = $this->get_lines();
         $code = substr($rply, 0, 3);
 
-        if($code != 334) {
+        if ($code != 334) {
           $this->error =
-            array('error' => 'AUTH not accepted from server',
-                  'smtp_code' => $code,
-                  'smtp_msg' => substr($rply, 4));
-          if($this->do_debug >= 1) {
+            array(
+              'error' => 'AUTH not accepted from server',
+              'smtp_code' => $code,
+              'smtp_msg' => substr($rply, 4)
+            );
+          if ($this->do_debug >= 1) {
             $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF . '<br />');
           }
           return false;
@@ -329,12 +348,14 @@ class SMTP{
         $rply = $this->get_lines();
         $code = substr($rply, 0, 3);
 
-        if($code != 334) {
+        if ($code != 334) {
           $this->error =
-            array('error' => 'Username not accepted from server',
-                  'smtp_code' => $code,
-                  'smtp_msg' => substr($rply, 4));
-          if($this->do_debug >= 1) {
+            array(
+              'error' => 'Username not accepted from server',
+              'smtp_code' => $code,
+              'smtp_msg' => substr($rply, 4)
+            );
+          if ($this->do_debug >= 1) {
             $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF . '<br />');
           }
           return false;
@@ -346,12 +367,14 @@ class SMTP{
         $rply = $this->get_lines();
         $code = substr($rply, 0, 3);
 
-        if($code != 235) {
+        if ($code != 235) {
           $this->error =
-            array('error' => 'Password not accepted from server',
-                  'smtp_code' => $code,
-                  'smtp_msg' => substr($rply, 4));
-          if($this->do_debug >= 1) {
+            array(
+              'error' => 'Password not accepted from server',
+              'smtp_code' => $code,
+              'smtp_msg' => substr($rply, 4)
+            );
+          if ($this->do_debug >= 1) {
             $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF . '<br />');
           }
           return false;
@@ -368,14 +391,14 @@ class SMTP{
         require_once 'extras/ntlm_sasl_client.php';
         $temp = new \stdClass();
         $ntlm_client = new ntlm_sasl_client_class;
-        if(! $ntlm_client->Initialize($temp)){//let's test if every function its available
-            $this->error = array('error' => $temp->error);
-            if($this->do_debug >= 1) {
-                $this->edebug('You need to enable some modules in your php.ini file: ' . $this->error['error'] . $this->CRLF);
-            }
-            return false;
+        if (!$ntlm_client->Initialize($temp)) { //let's test if every function its available
+          $this->error = array('error' => $temp->error);
+          if ($this->do_debug >= 1) {
+            $this->edebug('You need to enable some modules in your php.ini file: ' . $this->error['error'] . $this->CRLF);
+          }
+          return false;
         }
-        $msg1 = $ntlm_client->TypeMsg1($realm, $workstation);//msg1
+        $msg1 = $ntlm_client->TypeMsg1($realm, $workstation); //msg1
 
         $this->client_send('AUTH NTLM ' . base64_encode($msg1) . $this->CRLF);
 
@@ -383,36 +406,40 @@ class SMTP{
         $code = substr($rply, 0, 3);
 
 
-        if($code != 334) {
-            $this->error =
-                array('error' => 'AUTH not accepted from server',
-                      'smtp_code' => $code,
-                      'smtp_msg' => substr($rply, 4));
-            if($this->do_debug >= 1) {
-                $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF);
-            }
-            return false;
+        if ($code != 334) {
+          $this->error =
+            array(
+              'error' => 'AUTH not accepted from server',
+              'smtp_code' => $code,
+              'smtp_msg' => substr($rply, 4)
+            );
+          if ($this->do_debug >= 1) {
+            $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF);
+          }
+          return false;
         }
 
-        $challenge = substr($rply, 3);//though 0 based, there is a white space after the 3 digit number....//msg2
+        $challenge = substr($rply, 3); //though 0 based, there is a white space after the 3 digit number....//msg2
         $challenge = base64_decode($challenge);
         $ntlm_res = $ntlm_client->NTLMResponse(substr($challenge, 24, 8), $password);
-        $msg3 = $ntlm_client->TypeMsg3($ntlm_res, $username, $realm, $workstation);//msg3
+        $msg3 = $ntlm_client->TypeMsg3($ntlm_res, $username, $realm, $workstation); //msg3
         // Send encoded username
         $this->client_send(base64_encode($msg3) . $this->CRLF);
 
         $rply = $this->get_lines();
         $code = substr($rply, 0, 3);
 
-        if($code != 235) {
-            $this->error =
-                array('error' => 'Could not authenticate',
-                      'smtp_code' => $code,
-                      'smtp_msg' => substr($rply, 4));
-            if($this->do_debug >= 1) {
-                $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF);
-            }
-            return false;
+        if ($code != 235) {
+          $this->error =
+            array(
+              'error' => 'Could not authenticate',
+              'smtp_code' => $code,
+              'smtp_msg' => substr($rply, 4)
+            );
+          if ($this->do_debug >= 1) {
+            $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF);
+          }
+          return false;
         }
         break;
       case 'CRAM-MD5':
@@ -422,12 +449,14 @@ class SMTP{
         $rply = $this->get_lines();
         $code = substr($rply, 0, 3);
 
-        if($code != 334) {
+        if ($code != 334) {
           $this->error =
-            array('error' => 'AUTH not accepted from server',
-                  'smtp_code' => $code,
-                  'smtp_msg' => substr($rply, 4));
-          if($this->do_debug >= 1) {
+            array(
+              'error' => 'AUTH not accepted from server',
+              'smtp_code' => $code,
+              'smtp_msg' => substr($rply, 4)
+            );
+          if ($this->do_debug >= 1) {
             $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF . '<br />');
           }
           return false;
@@ -445,12 +474,14 @@ class SMTP{
         $rply = $this->get_lines();
         $code = substr($rply, 0, 3);
 
-        if($code != 334) {
+        if ($code != 334) {
           $this->error =
-            array('error' => 'Credentials not accepted from server',
-                  'smtp_code' => $code,
-                  'smtp_msg' => substr($rply, 4));
-          if($this->do_debug >= 1) {
+            array(
+              'error' => 'Credentials not accepted from server',
+              'smtp_code' => $code,
+              'smtp_msg' => substr($rply, 4)
+            );
+          if ($this->do_debug >= 1) {
             $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF . '<br />');
           }
           return false;
@@ -461,49 +492,51 @@ class SMTP{
   }
 
   /**
-* Works like hash_hmac('md5', $data, $key) in case that function is not available
-* @access private
-* @param string $data
-* @param string $key
-* @return string
-*/
-  private function hmac($data, $key) {
-      if (function_exists('hash_hmac')) {
-          return hash_hmac('md5', $data, $key);
-      }
+   * Works like hash_hmac('md5', $data, $key) in case that function is not available
+   * @access private
+   * @param string $data
+   * @param string $key
+   * @return string
+   */
+  private function hmac($data, $key)
+  {
+    if (function_exists('hash_hmac')) {
+      return hash_hmac('md5', $data, $key);
+    }
 
-      // The following borrowed from http://php.net/manual/en/function.mhash.php#27225
+    // The following borrowed from http://php.net/manual/en/function.mhash.php#27225
 
-      // RFC 2104 HMAC implementation for php.
-      // Creates an md5 HMAC.
-      // Eliminates the need to install mhash to compute a HMAC
-      // Hacked by Lance Rushing
+    // RFC 2104 HMAC implementation for php.
+    // Creates an md5 HMAC.
+    // Eliminates the need to install mhash to compute a HMAC
+    // Hacked by Lance Rushing
 
-      $b = 64; // byte length for md5
-      if (strlen($key) > $b) {
-          $key = pack('H*', md5($key));
-      }
-      $key = str_pad($key, $b, chr(0x00));
-      $ipad = str_pad('', $b, chr(0x36));
-      $opad = str_pad('', $b, chr(0x5c));
-      $k_ipad = $key ^ $ipad ;
-      $k_opad = $key ^ $opad;
+    $b = 64; // byte length for md5
+    if (strlen($key) > $b) {
+      $key = pack('H*', md5($key));
+    }
+    $key = str_pad($key, $b, chr(0x00));
+    $ipad = str_pad('', $b, chr(0x36));
+    $opad = str_pad('', $b, chr(0x5c));
+    $k_ipad = $key ^ $ipad;
+    $k_opad = $key ^ $opad;
 
-      return md5($k_opad . pack('H*', md5($k_ipad . $data)));
+    return md5($k_opad . pack('H*', md5($k_ipad . $data)));
   }
 
   /**
-* Returns true if connected to a server otherwise false
-* @access public
-* @return bool
-*/
-  public function Connected() {
-    if(!empty($this->smtp_conn)) {
+   * Returns true if connected to a server otherwise false
+   * @access public
+   * @return bool
+   */
+  public function Connected()
+  {
+    if (!empty($this->smtp_conn)) {
       $sock_status = stream_get_meta_data($this->smtp_conn);
-      if($sock_status['eof']) {
+      if ($sock_status['eof']) {
         // the socket is valid but we are not connected
-        if($this->do_debug >= 1) {
-            $this->edebug('SMTP -> NOTICE:' . $this->CRLF . 'EOF caught while checking if connected');
+        if ($this->do_debug >= 1) {
+          $this->edebug('SMTP -> NOTICE:' . $this->CRLF . 'EOF caught while checking if connected');
         }
         $this->Close();
         return false;
@@ -514,16 +547,17 @@ class SMTP{
   }
 
   /**
-* Closes the socket and cleans up the state of the class.
-* It is not considered good to use this function without
-* first trying to use QUIT.
-* @access public
-* @return void
-*/
-  public function Close() {
+   * Closes the socket and cleans up the state of the class.
+   * It is not considered good to use this function without
+   * first trying to use QUIT.
+   * @access public
+   * @return void
+   */
+  public function Close()
+  {
     $this->error = null; // so there is no confusion
     $this->helo_rply = null;
-    if(!empty($this->smtp_conn)) {
+    if (!empty($this->smtp_conn)) {
       // close the connection and cleanup
       fclose($this->smtp_conn);
       $this->smtp_conn = 0;
@@ -535,31 +569,33 @@ class SMTP{
   /////////////////////////////////////////////////
 
   /**
-* Issues a data command and sends the msg_data to the server
-* finializing the mail transaction. $msg_data is the message
-* that is to be send with the headers. Each header needs to be
-* on a single line followed by a <CRLF> with the message headers
-* and the message body being seperated by and additional <CRLF>.
-*
-* Implements rfc 821: DATA <CRLF>
-*
-* SMTP CODE INTERMEDIATE: 354
-* [data]
-* <CRLF>.<CRLF>
-* SMTP CODE SUCCESS: 250
-* SMTP CODE FAILURE: 552, 554, 451, 452
-* SMTP CODE FAILURE: 451, 554
-* SMTP CODE ERROR : 500, 501, 503, 421
-* @access public
-* @param string $msg_data
-* @return bool
-*/
-  public function Data($msg_data) {
+   * Issues a data command and sends the msg_data to the server
+   * finializing the mail transaction. $msg_data is the message
+   * that is to be send with the headers. Each header needs to be
+   * on a single line followed by a <CRLF> with the message headers
+   * and the message body being seperated by and additional <CRLF>.
+   *
+   * Implements rfc 821: DATA <CRLF>
+   *
+   * SMTP CODE INTERMEDIATE: 354
+   * [data]
+   * <CRLF>.<CRLF>
+   * SMTP CODE SUCCESS: 250
+   * SMTP CODE FAILURE: 552, 554, 451, 452
+   * SMTP CODE FAILURE: 451, 554
+   * SMTP CODE ERROR : 500, 501, 503, 421
+   * @access public
+   * @param string $msg_data
+   * @return bool
+   */
+  public function Data($msg_data)
+  {
     $this->error = null; // so no confusion is caused
 
-    if(!$this->connected()) {
+    if (!$this->connected()) {
       $this->error = array(
-              'error' => 'Called Data() without being connected');
+        'error' => 'Called Data() without being connected'
+      );
       return false;
     }
 
@@ -568,16 +604,18 @@ class SMTP{
     $rply = $this->get_lines();
     $code = substr($rply, 0, 3);
 
-    if($this->do_debug >= 2) {
+    if ($this->do_debug >= 2) {
       $this->edebug('SMTP -> FROM SERVER:' . $rply . $this->CRLF . '<br />');
     }
 
-    if($code != 354) {
+    if ($code != 354) {
       $this->error =
-        array('error' => 'DATA command not accepted from server',
-              'smtp_code' => $code,
-              'smtp_msg' => substr($rply, 4));
-      if($this->do_debug >= 1) {
+        array(
+          'error' => 'DATA command not accepted from server',
+          'smtp_code' => $code,
+          'smtp_msg' => substr($rply, 4)
+        );
+      if ($this->do_debug >= 1) {
         $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF . '<br />');
       }
       return false;
@@ -610,23 +648,23 @@ class SMTP{
 
     $field = substr($lines[0], 0, strpos($lines[0], ':'));
     $in_headers = false;
-    if(!empty($field) && !strstr($field, ' ')) {
+    if (!empty($field) && !strstr($field, ' ')) {
       $in_headers = true;
     }
 
     $max_line_length = 998; // used below; set here for ease in change
 
-    while(list(, $line) = @each($lines)) {
+    while (list(, $line) = @each($lines)) {
       $lines_out = null;
-      if($line == '' && $in_headers) {
+      if ($line == '' && $in_headers) {
         $in_headers = false;
       }
       // ok we need to break this line up into several smaller lines
-      while(strlen($line) > $max_line_length) {
+      while (strlen($line) > $max_line_length) {
         $pos = strrpos(substr($line, 0, $max_line_length), ' ');
 
         // Patch to fix DOS attack
-        if(!$pos) {
+        if (!$pos) {
           $pos = $max_line_length - 1;
           $lines_out[] = substr($line, 0, $pos);
           $line = substr($line, $pos);
@@ -638,17 +676,16 @@ class SMTP{
         /* if processing headers add a LWSP-char to the front of new line
 * rfc 822 on long msg headers
 */
-        if($in_headers) {
+        if ($in_headers) {
           $line = "\t" . $line;
         }
       }
       $lines_out[] = $line;
 
       // send the lines to the server
-      while(list(, $line_out) = @each($lines_out)) {
-        if(strlen($line_out) > 0)
-        {
-          if(substr($line_out, 0, 1) == '.') {
+      while (list(, $line_out) = @each($lines_out)) {
+        if (strlen($line_out) > 0) {
+          if (substr($line_out, 0, 1) == '.') {
             $line_out = '.' . $line_out;
           }
         }
@@ -662,16 +699,18 @@ class SMTP{
     $rply = $this->get_lines();
     $code = substr($rply, 0, 3);
 
-    if($this->do_debug >= 2) {
+    if ($this->do_debug >= 2) {
       $this->edebug('SMTP -> FROM SERVER:' . $rply . $this->CRLF . '<br />');
     }
 
-    if($code != 250) {
+    if ($code != 250) {
       $this->error =
-        array('error' => 'DATA not accepted from server',
-              'smtp_code' => $code,
-              'smtp_msg' => substr($rply, 4));
-      if($this->do_debug >= 1) {
+        array(
+          'error' => 'DATA not accepted from server',
+          'smtp_code' => $code,
+          'smtp_msg' => substr($rply, 4)
+        );
+      if ($this->do_debug >= 1) {
         $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF . '<br />');
       }
       return false;
@@ -680,36 +719,38 @@ class SMTP{
   }
 
   /**
-* Sends the HELO command to the smtp server.
-* This makes sure that we and the server are in
-* the same known state.
-*
-* Implements from rfc 821: HELO <SP> <domain> <CRLF>
-*
-* SMTP CODE SUCCESS: 250
-* SMTP CODE ERROR : 500, 501, 504, 421
-* @access public
-* @param string $host
-* @return bool
-*/
-  public function Hello($host = '') {
+   * Sends the HELO command to the smtp server.
+   * This makes sure that we and the server are in
+   * the same known state.
+   *
+   * Implements from rfc 821: HELO <SP> <domain> <CRLF>
+   *
+   * SMTP CODE SUCCESS: 250
+   * SMTP CODE ERROR : 500, 501, 504, 421
+   * @access public
+   * @param string $host
+   * @return bool
+   */
+  public function Hello($host = '')
+  {
     $this->error = null; // so no confusion is caused
 
-    if(!$this->connected()) {
+    if (!$this->connected()) {
       $this->error = array(
-            'error' => 'Called Hello() without being connected');
+        'error' => 'Called Hello() without being connected'
+      );
       return false;
     }
 
     // if hostname for HELO was not specified send default
-    if(empty($host)) {
+    if (empty($host)) {
       // determine appropriate default to send to server
       $host = 'localhost';
     }
 
     // Send extended hello first (RFC 2821)
-    if(!$this->SendHello('EHLO', $host)) {
-      if(!$this->SendHello('HELO', $host)) {
+    if (!$this->SendHello('EHLO', $host)) {
+      if (!$this->SendHello('HELO', $host)) {
         return false;
       }
     }
@@ -718,28 +759,31 @@ class SMTP{
   }
 
   /**
-* Sends a HELO/EHLO command.
-* @access private
-* @param string $hello
-* @param string $host
-* @return bool
-*/
-  private function SendHello($hello, $host) {
+   * Sends a HELO/EHLO command.
+   * @access private
+   * @param string $hello
+   * @param string $host
+   * @return bool
+   */
+  private function SendHello($hello, $host)
+  {
     $this->client_send($hello . ' ' . $host . $this->CRLF);
 
     $rply = $this->get_lines();
     $code = substr($rply, 0, 3);
 
-    if($this->do_debug >= 2) {
+    if ($this->do_debug >= 2) {
       $this->edebug('SMTP -> FROM SERVER: ' . $rply . $this->CRLF . '<br />');
     }
 
-    if($code != 250) {
+    if ($code != 250) {
       $this->error =
-        array('error' => $hello . ' not accepted from server',
-              'smtp_code' => $code,
-              'smtp_msg' => substr($rply, 4));
-      if($this->do_debug >= 1) {
+        array(
+          'error' => $hello . ' not accepted from server',
+          'smtp_code' => $code,
+          'smtp_msg' => substr($rply, 4)
+        );
+      if ($this->do_debug >= 1) {
         $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF . '<br />');
       }
       return false;
@@ -751,26 +795,28 @@ class SMTP{
   }
 
   /**
-* Starts a mail transaction from the email address specified in
-* $from. Returns true if successful or false otherwise. If True
-* the mail transaction is started and then one or more Recipient
-* commands may be called followed by a Data command.
-*
-* Implements rfc 821: MAIL <SP> FROM:<reverse-path> <CRLF>
-*
-* SMTP CODE SUCCESS: 250
-* SMTP CODE SUCCESS: 552, 451, 452
-* SMTP CODE SUCCESS: 500, 501, 421
-* @access public
-* @param string $from
-* @return bool
-*/
-  public function Mail($from) {
+   * Starts a mail transaction from the email address specified in
+   * $from. Returns true if successful or false otherwise. If True
+   * the mail transaction is started and then one or more Recipient
+   * commands may be called followed by a Data command.
+   *
+   * Implements rfc 821: MAIL <SP> FROM:<reverse-path> <CRLF>
+   *
+   * SMTP CODE SUCCESS: 250
+   * SMTP CODE SUCCESS: 552, 451, 452
+   * SMTP CODE SUCCESS: 500, 501, 421
+   * @access public
+   * @param string $from
+   * @return bool
+   */
+  public function Mail($from)
+  {
     $this->error = null; // so no confusion is caused
 
-    if(!$this->connected()) {
+    if (!$this->connected()) {
       $this->error = array(
-              'error' => 'Called Mail() without being connected');
+        'error' => 'Called Mail() without being connected'
+      );
       return false;
     }
 
@@ -780,16 +826,18 @@ class SMTP{
     $rply = $this->get_lines();
     $code = substr($rply, 0, 3);
 
-    if($this->do_debug >= 2) {
+    if ($this->do_debug >= 2) {
       $this->edebug('SMTP -> FROM SERVER:' . $rply . $this->CRLF . '<br />');
     }
 
-    if($code != 250) {
+    if ($code != 250) {
       $this->error =
-        array('error' => 'MAIL not accepted from server',
-              'smtp_code' => $code,
-              'smtp_msg' => substr($rply, 4));
-      if($this->do_debug >= 1) {
+        array(
+          'error' => 'MAIL not accepted from server',
+          'smtp_code' => $code,
+          'smtp_msg' => substr($rply, 4)
+        );
+      if ($this->do_debug >= 1) {
         $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF . '<br />');
       }
       return false;
@@ -798,23 +846,25 @@ class SMTP{
   }
 
   /**
-* Sends the quit command to the server and then closes the socket
-* if there is no error or the $close_on_error argument is true.
-*
-* Implements from rfc 821: QUIT <CRLF>
-*
-* SMTP CODE SUCCESS: 221
-* SMTP CODE ERROR : 500
-* @access public
-* @param bool $close_on_error
-* @return bool
-*/
-  public function Quit($close_on_error = true) {
+   * Sends the quit command to the server and then closes the socket
+   * if there is no error or the $close_on_error argument is true.
+   *
+   * Implements from rfc 821: QUIT <CRLF>
+   *
+   * SMTP CODE SUCCESS: 221
+   * SMTP CODE ERROR : 500
+   * @access public
+   * @param bool $close_on_error
+   * @return bool
+   */
+  public function Quit($close_on_error = true)
+  {
     $this->error = null; // so there is no confusion
 
-    if(!$this->connected()) {
+    if (!$this->connected()) {
       $this->error = array(
-              'error' => 'Called Quit() without being connected');
+        'error' => 'Called Quit() without being connected'
+      );
       return false;
     }
 
@@ -824,7 +874,7 @@ class SMTP{
     // get any good-bye messages
     $byemsg = $this->get_lines();
 
-    if($this->do_debug >= 2) {
+    if ($this->do_debug >= 2) {
       $this->edebug('SMTP -> FROM SERVER:' . $byemsg . $this->CRLF . '<br />');
     }
 
@@ -832,18 +882,20 @@ class SMTP{
     $e = null;
 
     $code = substr($byemsg, 0, 3);
-    if($code != 221) {
+    if ($code != 221) {
       // use e as a tmp var cause Close will overwrite $this->error
-      $e = array('error' => 'SMTP server rejected quit command',
-                 'smtp_code' => $code,
-                 'smtp_rply' => substr($byemsg, 4));
+      $e = array(
+        'error' => 'SMTP server rejected quit command',
+        'smtp_code' => $code,
+        'smtp_rply' => substr($byemsg, 4)
+      );
       $rval = false;
-      if($this->do_debug >= 1) {
+      if ($this->do_debug >= 1) {
         $this->edebug('SMTP -> ERROR: ' . $e['error'] . ': ' . $byemsg . $this->CRLF . '<br />');
       }
     }
 
-    if(empty($e) || $close_on_error) {
+    if (empty($e) || $close_on_error) {
       $this->Close();
     }
 
@@ -851,24 +903,26 @@ class SMTP{
   }
 
   /**
-* Sends the command RCPT to the SMTP server with the TO: argument of $to.
-* Returns true if the recipient was accepted false if it was rejected.
-*
-* Implements from rfc 821: RCPT <SP> TO:<forward-path> <CRLF>
-*
-* SMTP CODE SUCCESS: 250, 251
-* SMTP CODE FAILURE: 550, 551, 552, 553, 450, 451, 452
-* SMTP CODE ERROR : 500, 501, 503, 421
-* @access public
-* @param string $to
-* @return bool
-*/
-  public function Recipient($to) {
+   * Sends the command RCPT to the SMTP server with the TO: argument of $to.
+   * Returns true if the recipient was accepted false if it was rejected.
+   *
+   * Implements from rfc 821: RCPT <SP> TO:<forward-path> <CRLF>
+   *
+   * SMTP CODE SUCCESS: 250, 251
+   * SMTP CODE FAILURE: 550, 551, 552, 553, 450, 451, 452
+   * SMTP CODE ERROR : 500, 501, 503, 421
+   * @access public
+   * @param string $to
+   * @return bool
+   */
+  public function Recipient($to)
+  {
     $this->error = null; // so no confusion is caused
 
-    if(!$this->connected()) {
+    if (!$this->connected()) {
       $this->error = array(
-              'error' => 'Called Recipient() without being connected');
+        'error' => 'Called Recipient() without being connected'
+      );
       return false;
     }
 
@@ -877,16 +931,18 @@ class SMTP{
     $rply = $this->get_lines();
     $code = substr($rply, 0, 3);
 
-    if($this->do_debug >= 2) {
+    if ($this->do_debug >= 2) {
       $this->edebug('SMTP -> FROM SERVER:' . $rply . $this->CRLF . '<br />');
     }
 
-    if($code != 250 && $code != 251) {
+    if ($code != 250 && $code != 251) {
       $this->error =
-        array('error' => 'RCPT not accepted from server',
-              'smtp_code' => $code,
-              'smtp_msg' => substr($rply, 4));
-      if($this->do_debug >= 1) {
+        array(
+          'error' => 'RCPT not accepted from server',
+          'smtp_code' => $code,
+          'smtp_msg' => substr($rply, 4)
+        );
+      if ($this->do_debug >= 1) {
         $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF . '<br />');
       }
       return false;
@@ -895,21 +951,22 @@ class SMTP{
   }
 
   /**
-* Sends the RSET command to abort and transaction that is
-* currently in progress. Returns true if successful false
-* otherwise.
-*
-* Implements rfc 821: RSET <CRLF>
-*
-* SMTP CODE SUCCESS: 250
-* SMTP CODE ERROR : 500, 501, 504, 421
-* @access public
-* @return bool
-*/
-  public function Reset() {
+   * Sends the RSET command to abort and transaction that is
+   * currently in progress. Returns true if successful false
+   * otherwise.
+   *
+   * Implements rfc 821: RSET <CRLF>
+   *
+   * SMTP CODE SUCCESS: 250
+   * SMTP CODE ERROR : 500, 501, 504, 421
+   * @access public
+   * @return bool
+   */
+  public function Reset()
+  {
     $this->error = null; // so no confusion is caused
 
-    if(!$this->connected()) {
+    if (!$this->connected()) {
       $this->error = array('error' => 'Called Reset() without being connected');
       return false;
     }
@@ -919,16 +976,18 @@ class SMTP{
     $rply = $this->get_lines();
     $code = substr($rply, 0, 3);
 
-    if($this->do_debug >= 2) {
+    if ($this->do_debug >= 2) {
       $this->edebug('SMTP -> FROM SERVER:' . $rply . $this->CRLF . '<br />');
     }
 
-    if($code != 250) {
+    if ($code != 250) {
       $this->error =
-        array('error' => 'RSET failed',
-              'smtp_code' => $code,
-              'smtp_msg' => substr($rply, 4));
-      if($this->do_debug >= 1) {
+        array(
+          'error' => 'RSET failed',
+          'smtp_code' => $code,
+          'smtp_msg' => substr($rply, 4)
+        );
+      if ($this->do_debug >= 1) {
         $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF . '<br />');
       }
       return false;
@@ -938,28 +997,30 @@ class SMTP{
   }
 
   /**
-* Starts a mail transaction from the email address specified in
-* $from. Returns true if successful or false otherwise. If True
-* the mail transaction is started and then one or more Recipient
-* commands may be called followed by a Data command. This command
-* will send the message to the users terminal if they are logged
-* in and send them an email.
-*
-* Implements rfc 821: SAML <SP> FROM:<reverse-path> <CRLF>
-*
-* SMTP CODE SUCCESS: 250
-* SMTP CODE SUCCESS: 552, 451, 452
-* SMTP CODE SUCCESS: 500, 501, 502, 421
-* @access public
-* @param string $from
-* @return bool
-*/
-  public function SendAndMail($from) {
+   * Starts a mail transaction from the email address specified in
+   * $from. Returns true if successful or false otherwise. If True
+   * the mail transaction is started and then one or more Recipient
+   * commands may be called followed by a Data command. This command
+   * will send the message to the users terminal if they are logged
+   * in and send them an email.
+   *
+   * Implements rfc 821: SAML <SP> FROM:<reverse-path> <CRLF>
+   *
+   * SMTP CODE SUCCESS: 250
+   * SMTP CODE SUCCESS: 552, 451, 452
+   * SMTP CODE SUCCESS: 500, 501, 502, 421
+   * @access public
+   * @param string $from
+   * @return bool
+   */
+  public function SendAndMail($from)
+  {
     $this->error = null; // so no confusion is caused
 
-    if(!$this->connected()) {
+    if (!$this->connected()) {
       $this->error = array(
-          'error' => 'Called SendAndMail() without being connected');
+        'error' => 'Called SendAndMail() without being connected'
+      );
       return false;
     }
 
@@ -968,16 +1029,18 @@ class SMTP{
     $rply = $this->get_lines();
     $code = substr($rply, 0, 3);
 
-    if($this->do_debug >= 2) {
+    if ($this->do_debug >= 2) {
       $this->edebug('SMTP -> FROM SERVER:' . $rply . $this->CRLF . '<br />');
     }
 
-    if($code != 250) {
+    if ($code != 250) {
       $this->error =
-        array('error' => 'SAML not accepted from server',
-              'smtp_code' => $code,
-              'smtp_msg' => substr($rply, 4));
-      if($this->do_debug >= 1) {
+        array(
+          'error' => 'SAML not accepted from server',
+          'smtp_code' => $code,
+          'smtp_msg' => substr($rply, 4)
+        );
+      if ($this->do_debug >= 1) {
         $this->edebug('SMTP -> ERROR: ' . $this->error['error'] . ': ' . $rply . $this->CRLF . '<br />');
       }
       return false;
@@ -986,46 +1049,49 @@ class SMTP{
   }
 
   /**
-* This is an optional command for SMTP that this class does not
-* support. This method is here to make the RFC821 Definition
-* complete for this class and __may__ be implimented in the future
-*
-* Implements from rfc 821: TURN <CRLF>
-*
-* SMTP CODE SUCCESS: 250
-* SMTP CODE FAILURE: 502
-* SMTP CODE ERROR : 500, 503
-* @access public
-* @return bool
-*/
-  public function Turn() {
-    $this->error = array('error' => 'This method, TURN, of the SMTP '.
-                                    'is not implemented');
-    if($this->do_debug >= 1) {
+   * This is an optional command for SMTP that this class does not
+   * support. This method is here to make the RFC821 Definition
+   * complete for this class and __may__ be implimented in the future
+   *
+   * Implements from rfc 821: TURN <CRLF>
+   *
+   * SMTP CODE SUCCESS: 250
+   * SMTP CODE FAILURE: 502
+   * SMTP CODE ERROR : 500, 503
+   * @access public
+   * @return bool
+   */
+  public function Turn()
+  {
+    $this->error = array('error' => 'This method, TURN, of the SMTP ' .
+      'is not implemented');
+    if ($this->do_debug >= 1) {
       $this->edebug('SMTP -> NOTICE: ' . $this->error['error'] . $this->CRLF . '<br />');
     }
     return false;
   }
 
   /**
-* Sends data to the server
-* @param string $data
-* @access public
-* @return Integer number of bytes sent to the server or FALSE on error
-*/
-  public function client_send($data) {
-      if ($this->do_debug >= 1) {
-          $this->edebug("CLIENT -> SMTP: $data" . $this->CRLF . '<br />');
-      }
-      return fwrite($this->smtp_conn, $data);
+   * Sends data to the server
+   * @param string $data
+   * @access public
+   * @return Integer number of bytes sent to the server or FALSE on error
+   */
+  public function client_send($data)
+  {
+    if ($this->do_debug >= 1) {
+      $this->edebug("CLIENT -> SMTP: $data" . $this->CRLF . '<br />');
+    }
+    return fwrite($this->smtp_conn, $data);
   }
 
   /**
-* Get the current error
-* @access public
-* @return array
-*/
-  public function getError() {
+   * Get the current error
+   * @access public
+   * @return array
+   */
+  public function getError()
+  {
     return $this->error;
   }
 
@@ -1034,15 +1100,16 @@ class SMTP{
   /////////////////////////////////////////////////
 
   /**
-* Read in as many lines as possible
-* either before eof or socket timeout occurs on the operation.
-* With SMTP we can tell if we have more lines to read if the
-* 4th character is '-' symbol. If it is a space then we don't
-* need to read anything else.
-* @access private
-* @return string
-*/
-  private function get_lines() {
+   * Read in as many lines as possible
+   * either before eof or socket timeout occurs on the operation.
+   * With SMTP we can tell if we have more lines to read if the
+   * 4th character is '-' symbol. If it is a space then we don't
+   * need to read anything else.
+   * @access private
+   * @return string
+   */
+  private function get_lines()
+  {
     $data = '';
     $endtime = 0;
     /* If for some reason the fp is bad, don't inf loop */
@@ -1053,22 +1120,24 @@ class SMTP{
     if ($this->Timelimit > 0) {
       $endtime = time() + $this->Timelimit;
     }
-    while(is_resource($this->smtp_conn) && !feof($this->smtp_conn)) {
+    while (is_resource($this->smtp_conn) && !feof($this->smtp_conn)) {
       $str = @fgets($this->smtp_conn, 515);
-      if($this->do_debug >= 4) {
+      if ($this->do_debug >= 4) {
         $this->edebug("SMTP -> get_lines(): \$data was \"$data\"" . $this->CRLF . '<br />');
         $this->edebug("SMTP -> get_lines(): \$str is \"$str\"" . $this->CRLF . '<br />');
       }
       $data .= $str;
-      if($this->do_debug >= 4) {
+      if ($this->do_debug >= 4) {
         $this->edebug("SMTP -> get_lines(): \$data is \"$data\"" . $this->CRLF . '<br />');
       }
       // if 4th character is a space, we are done reading, break the loop
-      if(substr($str, 3, 1) == ' ') { break; }
+      if (substr($str, 3, 1) == ' ') {
+        break;
+      }
       // Timed-out? Log and break
       $info = stream_get_meta_data($this->smtp_conn);
       if ($info['timed_out']) {
-        if($this->do_debug >= 4) {
+        if ($this->do_debug >= 4) {
           $this->edebug('SMTP -> get_lines(): timed-out (' . $this->Timeout . ' seconds) <br />');
         }
         break;
@@ -1076,7 +1145,7 @@ class SMTP{
       // Now check if reads took too long
       if ($endtime) {
         if (time() > $endtime) {
-          if($this->do_debug >= 4) {
+          if ($this->do_debug >= 4) {
             $this->edebug('SMTP -> get_lines(): timelimit reached (' . $this->Timelimit . ' seconds) <br />');
           }
           break;
@@ -1085,5 +1154,4 @@ class SMTP{
     }
     return $data;
   }
-
 }

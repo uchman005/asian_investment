@@ -1,96 +1,78 @@
-﻿<section class="projects-area-two two ptb-100">
-    <div class="container">
+﻿<div class="page-title-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="title-content">
+                    <h2>Individual Projects</h2>
+                    <ul>
+                        <li>
+                            <a href="./">.Home</a>
+                        </li>
+                        <li>
+                            <span>Individual Projects</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class=" projects-area bg-white ptb-100 ">
+    <div class="container ">
         <div class="row">
-            <div class="col-sm-6 col-lg-4">
-                <div class="projects-item-two">
-                    <img src="<?= $assets ?>/img/projects/project-shape1.png" alt="Shape">
-                    <img src="<?= $assets ?>/img/projects/project-shape2.png" alt="Shape">
-                    <i class="flaticon-goal icon"></i>
-                    <h3>
-                        <a href="./project-details">Individual Projects</a>
-                    </h3>
-                    <p></p>
-                    <a class="projects-btn" href="./project-details">
-                        Read More
-                        <i class='bx bx-right-arrow-alt'></i>
-                    </a>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <div class="row ">
+                    <div class="col-sm-6 col-lg-6 ">
+                        <div class="projects-item ">
+                            <img src="<?= $assets ?>/img/projects/projects2.jpg " alt="Projects ">
+                            <div class="inner ">
+                                <h3>
+                                    <a href="./project-details ">Financial Growth</a>
+                                </h3>
+                                <a class="projects-btn " href="# ">Finance</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-6 ">
+                        <div class="projects-item ">
+                            <img src="<?= $assets ?>/img/projects/projects3.jpg " alt="Projects ">
+                            <div class="inner ">
+                                <h3>
+                                    <a href="./project-details ">Fund Management</a>
+                                </h3>
+                                <a class="projects-btn " href="# ">Management</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-6 ">
+                        <div class="projects-item ">
+                            <img src="<?= $assets ?>/img/projects/projects5.jpg " alt="Projects ">
+                            <div class="inner ">
+                                <h3>
+                                    <a href="./project-details ">Financial Secure</a>
+                                </h3>
+                                <a class="projects-btn " href="# ">Financial</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-6 ">
+                        <div class="projects-item ">
+                            <img src="<?= $assets ?>/img/projects/projects6.jpg " alt="Projects ">
+                            <div class="inner ">
+                                <h3>
+                                    <a href="./project-details ">Guide & Support</a>
+                                </h3>
+                                <a class="projects-btn " href="# ">Support</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-4">
-                <div class="projects-item-two">
-                    <img src="<?= $assets ?>/img/projects/project-shape1.png" alt="Shape">
-                    <img src="<?= $assets ?>/img/projects/project-shape2.png" alt="Shape">
-                    <i class="flaticon-support icon"></i>
-                    <h3>
-                        <a href="./project-details">Guide & Support</a>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor facilisis.</p>
-                    <a class="projects-btn" href="./project-details">
-                        Read More
-                        <i class='bx bx-right-arrow-alt'></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-                <div class="projects-item-two">
-                    <img src="<?= $assets ?>/img/projects/project-shape1.png" alt="Shape">
-                    <img src="<?= $assets ?>/img/projects/project-shape2.png" alt="Shape">
-                    <i class="flaticon-investment-insurance icon"></i>
-                    <h3>
-                        <a href="./project-details">Financial Secure</a>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor facilisis.</p>
-                    <a class="projects-btn" href="./project-details">
-                        Read More
-                        <i class='bx bx-right-arrow-alt'></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-                <div class="projects-item-two">
-                    <img src="<?= $assets ?>/img/projects/project-shape1.png" alt="Shape">
-                    <img src="<?= $assets ?>/img/projects/project-shape2.png" alt="Shape">
-                    <i class="flaticon-refinancing icon"></i>
-                    <h3>
-                        <a href="./project-details">Refinancing</a>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor facilisis.</p>
-                    <a class="projects-btn" href="./project-details">
-                        Read More
-                        <i class='bx bx-right-arrow-alt'></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-                <div class="projects-item-two">
-                    <img src="<?= $assets ?>/img/projects/project-shape1.png" alt="Shape">
-                    <img src="<?= $assets ?>/img/projects/project-shape2.png" alt="Shape">
-                    <i class="flaticon-investment icon"></i>
-                    <h3>
-                        <a href="./project-details">Investment Trading</a>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor facilisis.</p>
-                    <a class="projects-btn" href="./project-details">
-                        Read More
-                        <i class='bx bx-right-arrow-alt'></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-                <div class="projects-item-two">
-                    <img src="<?= $assets ?>/img/projects/project-shape1.png" alt="Shape">
-                    <img src="<?= $assets ?>/img/projects/project-shape2.png" alt="Shape">
-                    <i class="flaticon-bar-chart icon"></i>
-                    <h3>
-                        <a href="./project-details">Financial Consultancy</a>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor facilisis.</p>
-                    <a class="projects-btn" href="./project-details">
-                        Read More
-                        <i class='bx bx-right-arrow-alt'></i>
-                    </a>
-                </div>
-            </div>
+            <div class="col-lg-1"></div>
+
         </div>
     </div>
 </section>
