@@ -156,7 +156,7 @@
                         <div class="side-nav">
                             <div class="language">
                             </div>
-                          <?= $menukey != 'get-funding'?  '<a class="consultant-btn" href="./get-funding">Get Funding</a>' : null?>
+                            <?= $menukey != 'get-funding' ?  '<a class="consultant-btn" href="./get-funding">Get Funding</a>' : null ?>
                         </div>
                     </div>
                 </nav>
